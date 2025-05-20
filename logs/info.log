@@ -27058,3 +27058,40 @@ INFO 2025-05-20 11:31:13,848 basehttp "GET /products/bestseller HTTP/1.1" 200 27
 WARNING 2025-05-20 11:31:13,911 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
 WARNING 2025-05-20 11:31:13,913 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5130
 INFO 2025-05-20 11:31:13,918 basehttp "GET /static/css/dist/styles.css?v=1747733473 HTTP/1.1" 200 39726
+INFO 2025-05-20 11:44:16,518 basehttp "GET / HTTP/1.1" 200 48347
+INFO 2025-05-20 11:44:16,561 basehttp "GET /static/css/dist/styles.css?v=1747734256 HTTP/1.1" 200 39726
+INFO 2025-05-20 11:44:16,576 basehttp "GET /static/img/icons/raphael_arrowdown.png HTTP/1.1" 200 556
+INFO 2025-05-20 11:44:16,581 basehttp "GET /static/img/icons/twemoji_flag-england.png HTTP/1.1" 200 657
+INFO 2025-05-20 11:44:16,611 basehttp "GET /static/img/icons/twemoji_flag-serbia.png HTTP/1.1" 200 2560
+INFO 2025-05-20 11:44:16,622 basehttp "GET /static/img/test1.webp HTTP/1.1" 200 62828
+INFO 2025-05-20 11:44:16,649 basehttp "GET /static/img/logo.png HTTP/1.1" 200 70566
+INFO 2025-05-20 11:44:16,682 basehttp "GET /static/js/scrollToTop.js HTTP/1.1" 200 278
+INFO 2025-05-20 11:44:16,687 basehttp "GET /static/js/scheduleDate.js HTTP/1.1" 200 1221
+INFO 2025-05-20 11:44:16,696 basehttp "GET /media/dresses/main/AD0281-01.progressive.webp HTTP/1.1" 200 91320
+INFO 2025-05-20 11:44:16,707 basehttp "GET /media/dresses/main/AD2075-02.progressive.webp HTTP/1.1" 200 120810
+INFO 2025-05-20 11:44:16,714 basehttp "GET /media/dresses/main/AD2230-02.progressive.webp HTTP/1.1" 200 108172
+INFO 2025-05-20 11:44:16,724 basehttp "GET /static/img/cover.jpg HTTP/1.1" 200 261635
+INFO 2025-05-20 11:44:16,732 basehttp "GET /media/dresses/main/c7983744-857b-4b92-8f6e-58fbe63a2197.progressive.webp HTTP/1.1" 200 201832
+INFO 2025-05-20 11:44:16,738 basehttp "GET /static/js/scheduleAppointment.js HTTP/1.1" 200 1691
+INFO 2025-05-20 11:44:16,739 basehttp "GET /media/dresses/main/IMG_1980.progressive.webp HTTP/1.1" 200 227070
+INFO 2025-05-20 11:44:16,746 basehttp "GET /media/dresses/main/AD2022-3.progressive.webp HTTP/1.1" 200 95558
+INFO 2025-05-20 11:44:16,751 basehttp "GET /media/dresses/main/C93D00FE-0EB5-4C97-A11C-AF343E22DF6D.progressive.webp HTTP/1.1" 200 536034
+INFO 2025-05-20 11:44:16,752 basehttp "GET /media/dresses/main/IMG_4532.progressive.webp HTTP/1.1" 200 677374
+INFO 2025-05-20 11:44:16,769 basehttp "GET /static/img/cover2.jpg HTTP/1.1" 200 104987
+INFO 2025-05-20 11:44:16,774 basehttp "GET /static/img/le_choix/272995660_4957446594305692_8334829264135824333_n.jpg HTTP/1.1" 200 249101
+INFO 2025-05-20 11:44:16,777 basehttp "GET /static/img/le_choix/269787931_902158197153317_2511143532287720393_n.jpg HTTP/1.1" 200 270368
+INFO 2025-05-20 11:44:16,790 basehttp "GET /static/img/icons/instagram.png HTTP/1.1" 200 4455
+INFO 2025-05-20 11:44:16,792 basehttp "GET /static/img/icons/tiktok.png HTTP/1.1" 200 10564
+INFO 2025-05-20 11:44:16,794 basehttp "GET /static/img/icons/facebook.png HTTP/1.1" 200 2420
+INFO 2025-05-20 11:44:16,800 basehttp "GET /static/img/icons/akar-icons_schedule.png HTTP/1.1" 200 3523
+INFO 2025-05-20 11:44:16,809 basehttp "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-05-20 11:44:16,944 basehttp "GET /static/django-browser-reload/reload-worker.js HTTP/1.1" 200 2711
+INFO 2025-05-20 11:44:16,956 basehttp "GET /static/img/cover4.jpg HTTP/1.1" 200 1368595
+INFO 2025-05-20 11:44:16,957 basehttp "GET /static/img/cover5.jpg HTTP/1.1" 200 1434269
+INFO 2025-05-20 11:44:16,972 basehttp "GET /static/img/cover6.jpg HTTP/1.1" 200 3168230
+WARNING 2025-05-20 11:44:16,987 log Not Found: /favicon.ico
+WARNING 2025-05-20 11:44:16,988 basehttp "GET /favicon.ico HTTP/1.1" 404 5019
+INFO 2025-05-20 11:46:29,168 autoreload D:\projects\miyamie\miyamie\miyamie\settings.py changed, reloading.
+INFO 2025-05-20 11:46:35,704 autoreload Watching for file changes with StatReloader
+INFO 2025-05-20 11:46:37,013 basehttp "GET / HTTP/1.1" 200 48347
+INFO 2025-05-20 11:46:37,097 basehttp "GET /static/css/dist/styles.css?v=1747734396 HTTP/1.1" 200 39726
