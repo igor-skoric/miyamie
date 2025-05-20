@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Template</title>
+    <style>
+        /* Osnovni stilovi */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f3f4f6; /* background-gray-100 */
+        }
+
+        .content {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .icon {
+            font-size: 48px;
+            color: #4CAF50;
+        }
+
+        .header-text {
+            text-align: center;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
+        .subheader-text {
+            text-align: center;
+            font-size: 20px;
+            margin-top: 5px;
+        }
+
+        .paragraph {
+            text-align: center;
+            font-size: 16px;
+            margin-top: 15px;
+            color: #333;
+        }
+
+        .button {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            padding: 12px 20px;
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .button:hover {
+            background-color: #333333;
+        }
+
+        .footer {
+            text-align: center;
+            background-color: #d1d1d1; /* background-gray-300 */
+            color: #ffffff;
+            padding: 8px 0;
+            font-weight: bold;
+        }
+
+        .footer a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .footer a:hover {
+            color: #e0e0e0;
+        }
+
+        /* New section for the appointment details */
+        .appointment-details {
+            margin-top: 20px;
+        }
+
+        .appointment-details p {
+            font-size: 16px;
+            margin: 5px 0;
+            color: #333;
+        }
+
+        .details-header {
+            font-weight: bold;
+            color: #000;
+        }
+        #logo{
+            width:30%;
+        }
+        .center {
+            display:flex;
+            justify-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <!-- Icon and heading -->
+        <p class="text-center">
+            <i class="icon fa-regular fa-circle-check"></i>
+        </p>
+        <table role="presentation" width="100%">
+            <tr>
+                <td align="center">
+                    <img src="http://127.0.0.1:8000/static/img/logo.png" alt="logo"
+                         style="max-width: 150px; display: block;">
+                </td>
+            </tr>
+        </table>
+
+
+        <h2 class="header-text">Hvala Vam!</h2>
+        <h2 class="subheader-text">Vaš termin je uspešno zakazan.</h2>
+
+
+
+        <!-- Appointment details -->
+        <div class="appointment-details">
+            <p><span class="details-header">Ime:</span> {{name}}</p>
+            <p><span class="details-header">Email:</span> {{email}}</p>
+            <p><span class="details-header">Telefon:</span> {{phone}}</p>
+            <p><span class="details-header">Vreme:</span> {{time}}</p>
+            <p><span class="details-header">Datum:</span> {{date}}</p>
+        </div>
+        <!-- Informational paragraph -->
+        <p class="paragraph">
+            Radujemo se vašem dolasku!
+        </p>
+        <!-- Button -->
+        <a href="javascript:history.back()" class="button">Nazad na sajt</a>
+    </div>
+
+    <!-- Footer section -->
+    <p class="footer">
+        Ukoliko imate dodatna pitanja, slobodno nas
+        <a href="#">kontaktirajte</a>.
+    </p>
+</div>
+</body>
+</html>

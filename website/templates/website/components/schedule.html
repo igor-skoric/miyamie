@@ -1,0 +1,71 @@
+{% load static %}
+<!-- Kontejner koji sadrži i dugme i formu -->
+<div id="sidebarContainer"
+     class="flex fixed top-1/2 right-0 transform -translate-y-1/2 translate-x-[320px] z-50 transition-transform duration-500 ease-in-out">
+
+    <!-- Forma -->
+    <div id="formContainer" class="bg-white shadow-xl rounded-l-lg w-80 p-6 space-y-4">
+        <!-- Dugme -->
+        <div id="ses"
+             class="openSidebarBtn absolute -left-8 md:-left-10 bg-black text-white p-2 rounded-l-xl cursor-pointer flex gap-2 md:gap-5 flex-col items-center justify-center space-y-2 h-20 md:h-40 w-8 md:w-12">
+            <img src="{% static 'img/icons/akar-icons_schedule.png' %}" alt="Haljina 1"
+                 class="w-full h-auto object-cover rounded-lg">
+            <p class="text-xs md:text-xl transform -rotate-90 origin-center whitespace-nowrap ">Zakaži</p>
+        </div>
+        <h2 class="text-xl font-semibold">Zakaži termin</h2>
+
+        <form id="appointment-form" class="space-y-2">
+            {% csrf_token %}
+            <label>Ime</label>
+            <input type="text" name="name" placeholder="Ime" class="w-full border border-gray-300 rounded px-4 py-2" required/>
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Email" class="w-full border border-gray-300 rounded px-4 py-2" required/>
+            <label>Telefon</label>
+            <input type="tel" name="phone" placeholder="Telefon" class="w-full border border-gray-300 rounded px-4 py-2" required/>
+            <label>Datum</label>
+            <input type="date" name="date" class="w-full border border-gray-300 rounded px-4 py-2" required/>
+            <div id="field-wrapper-time" class="hidden">
+                <label>Vreme</label>
+                <select name="time" class="w-full border border-gray-300 rounded px-4 py-2" required>
+                </select>
+
+            </div>
+            <button type="submit" class="w-full bg-black text-white py-2 rounded hover:bg-gray-700 transition">Pošalji
+            </button>
+        </form>
+        <div id="form-errors"></div>
+    </div>
+
+
+</div>
+
+
+<script>
+  const sidebarContainer = document.getElementById("sidebarContainer");
+  const openButtons = document.querySelectorAll(".openSidebarBtn");
+
+  let isOpen = false;
+
+  openButtons.forEach(button => {
+    button.addEventListener("click", (event) => {
+      event.stopPropagation(); // Spreči da klik zatvori sidebar odmah
+
+      sidebarContainer.classList.remove("translate-x-[320px]");
+      sidebarContainer.classList.add("translate-x-0");
+      isOpen = true;
+    });
+  });
+
+  // Klik van sidebara zatvara ga
+  document.addEventListener("click", (event) => {
+    if (
+      isOpen &&
+      !event.target.closest("#sidebarContainer") &&
+      !event.target.classList.contains("openSidebarBtn")
+    ) {
+      sidebarContainer.classList.remove("translate-x-0");
+      sidebarContainer.classList.add("translate-x-[320px]");
+      isOpen = false;
+    }
+  });
+</script>

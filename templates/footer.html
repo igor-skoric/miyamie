@@ -1,0 +1,91 @@
+{% load static %}
+<footer class="bg-black text-white/50 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-between">
+
+            <!-- Kolona 1 -->
+            <div class="flex flex-col justify-center items-center">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'img/logo.png' %}" alt="Haljina" class="w-[300px] rounded"/>
+                </a>
+                <div class="flex gap-5">
+                    <a href="{{config.instagram_link}}">
+                        <img src="{% static 'img/icons/instagram.png' %}" alt="" class="h-8 "/>
+                    </a>
+                    <a href="{{config.tiktok_link}}">
+                        <img src="{% static 'img/icons/tiktok.png' %}" alt="" class="h-8"/>
+                    </a>
+                    <a href="{{config.facebook_link}}">
+                        <img src="{% static 'img/icons/facebook.png' %}" alt="" class="h-8 "/>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Kolona 2 -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4 text-white/70 border-l-4 border-white/30 pl-2">KONTAKT</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="tel:{{config.contact_phone}}" class="hover:underline">{{config.contact_phone}}</a></li>
+                    <li><a href="mailto:{{config.email}}" class="hover:underline">{{config.email}}</a></li>
+                </ul>
+
+                <br><br>
+
+                <h3 class="text-lg font-semibold mb-4 text-white/70 border-l-4 border-white/30 pl-2">LOKACIJA</h3>
+                <ul class="space-y-2 text-sm">
+                    <li>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Bulevar+Arsenija+Čarnojevića+82,+Novi+Beograd"
+                           target="_blank" class="hover:underline">
+                            {{config.address}}
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <!-- Kolona 3 -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4 text-white/70 border-l-4 border-white/30 pl-2">STRANICE</h3>
+                <ul class="space-y-2 ">
+                    <li><a href="{% url 'home' %}" class="hover:underline">Naslovna</a></li>
+                    <li><a href="{% url 'products' 'short' %}" class="hover:underline">Kratke haljine</a></li>
+                    <li><a href="{% url 'products' 'long' %}" class="hover:underline">Duge haljine</a></li>
+                    <li><a href="{% url 'products' 'bestseller' %}" class="hover:underline">Najprodavanije</a></li>
+                    <li><a href="{% url 'products' 'woman' %}" class="hover:underline">Le choix - Žene</a></li>
+                    <li><a href="{% url 'products' 'kids' %}" class="hover:underline">Le choix - Deca</a></li>
+                    <li><a href="{% url 'about' %}" class="hover:underline">O nama</a></li>
+                    <li><a href="{% url 'contact' %}" class="hover:underline">Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-700 mt-10 pt-6 text-sm text-gray-400 flex justify-between">
+            <div>&copy; 2025 MIYAMIE. Sva prava zadržana.</div>
+
+            <!--            <div class="relative">-->
+            <!--                &lt;!&ndash; Dugme za otvaranje &ndash;&gt;-->
+            <!--                <div class="inline cursor-pointer languageToggle" onclick="toggleLanguageMenu(this)">-->
+            <!--                    <p class="pl-5 mr-2 inline">Jezik</p>-->
+            <!--                    <img src="{% static 'img/icons/raphael_arrowdown.png' %}" alt="" class="w-4 inline"/>-->
+            <!--                </div>-->
+
+            <!--                &lt;!&ndash; Dropdown meni &ndash;&gt;-->
+            <!--                <div class="languageMenu hidden origin-top-right absolute mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10">-->
+            <!--                    <div class="py-1">-->
+            <!--                        <button class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center"-->
+            <!--                                onclick="setLanguage('en')">-->
+            <!--                            <img src="{% static 'img/icons/twemoji_flag-england.png' %}" alt=""-->
+            <!--                                 class="w-6 inline mr-2"/>-->
+            <!--                            English-->
+            <!--                        </button>-->
+            <!--                        <button class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center"-->
+            <!--                                onclick="setLanguage('sr')">-->
+            <!--                            <img src="{% static 'img/icons/twemoji_flag-serbia.png' %}" alt="" class="w-6 inline mr-2"/>-->
+            <!--                            Српски-->
+            <!--                        </button>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+        </div>
+    </div>
+</footer>

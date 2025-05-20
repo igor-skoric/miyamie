@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}About Page{% endblock %}
+
+{% block content %}
+
+{% include 'website/components/breadcrumbs.html' %}
+<section class="mt-20">
+    <div class="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 p-2 max-w-[1200px]">
+        <div class="flex flex-col justify-center items-center w-auto ">
+            <img src="{% static 'img/about.jpeg' %}" alt="about" class=" rounded-2xl shadow-xl"/>
+        </div>
+        <div class="flex flex-col gap-10 w-auto pr-8 md:pr-64 lg:pr-32  rounded-xl p-2">
+            <h1 class="text-6xl w-[90%]">Vaša modna oaza</h1>
+            <p class="text-2xl">Verujemo da svaka žena zaslužuje trenutak pažnje i prostora da zablista. Zato smo stvorili mesto gde možete iznajmiti ekskluzivne haljine za svečane prilike i zakazati probu u terminu koji vama najviše odgovara. Uz to, nudimo i casual jakne koje možete isprobati na licu mesta. Naš cilj je da se u prijatnom ambijentu svakoj dami posvetimo s posebnom pažnjom.</p>
+        </div>
+    </div>
+</section>
+
+<section class="mt-16 md:mt-36">
+    <div class="">
+        <h2 class="font-vibes tracking-wide leading-relaxed  bg-black/80 py-5 px-5 md:px-20 w-fit rounded-r-2xl text-white text-2xl md:text-5xl">Verujemo da luksuz ne treba da bude
+            privilegija, već iskustvo dostupno svima.</h2>
+    </div>
+</section>
+
+<!--<div class="mt-16 md:mt-36 flex w-full max-w-4xl mx-auto h-[500px] gap-1">-->
+<!--    &lt;!&ndash; Leva slika &ndash;&gt;-->
+<!--    <div class="w-1/2 h-full p-1">-->
+<!--        <img src="{% static 'img/dresses/progressive.webp' %}" alt="Kitchen"-->
+<!--             class=" w-full h-full object-cover rounded-l-xl"/>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Desne slike &ndash;&gt;-->
+<!--    <div class="w-1/2 h-full flex flex-col">-->
+<!--        <div class="h-1/2 p-1">-->
+<!--            <img src="{% static 'img/dresses/progressive.webp' %}" alt="Kitchen" class=" w-full h-full object-cover"/>-->
+<!--        </div>-->
+<!--        <div class="h-1/2 p-1">-->
+<!--            <img src="{% static 'img/dresses/progressive.webp' %}" alt="Kitchen" class=" w-full h-full object-cover"/>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<section class="relative w-full h-[200px] md:h-[280px] flex items-center justify-center">
+    <div class="text-center">
+        <p class="text-lg text-gray-700">Uronite u svet elegancije uz našu pažljivo odabranu kolekciju luksuznih haljina koje odišu stilom i gracioznošću.</p>
+        <!-- Prvi tekst -->
+        <h2 class="text-6xl font-bold mb-4">Luksuz koji inspiriše i osvaja.</h2>
+        <!-- Drugi tekst -->
+    </div>
+</section>
+
+
+<section class="mt-5 md:mt-10">
+    <div class="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 px-2 max-w-[1200px]">
+        <div class="flex flex-col gap-5 w-auto rounded-xl md:pl-32 p-5 order-2 md:order-1">
+            <h1 class="md:text-4xl text-3xl pt-10">Kod nas dobijate punu uslugu.</h1>
+            <div class="flex flex-col justify-center pt-16 gap-5">
+                <div class="flex gap-2 items-center">
+                    <p><img src="{% static 'img/icons/dress.png' %}" alt="Kitchen"
+                            class="h-12 object-cover"/></p>
+                    <p class="text-xl">Ekskluzivne haljine</p>
+                </div>
+                <div class="flex gap-2 items-center">
+                    <p><img src="{% static 'img/icons/tdesign_user-talk.png' %}" alt="Kitchen"
+                            class="h-12 object-cover"/></p>
+                    <p class="text-xl">Personalizovano savetovanje</p>
+                </div>
+                <div class="flex gap-2 items-center">
+                    <p><img src="{% static 'img/icons/hugeicons_curtains.png' %}" alt="Kitchen"
+                            class="h-12 object-cover"/></p>
+                    <p class="text-xl">Showroom za isprobavanje</p>
+                </div>
+                <div class="flex gap-2 items-center">
+                    <p><img src="{% static 'img/icons/akar-icons_schedule (1).png' %}" alt="Kitchen"
+                            class="h-12 object-cover"/></p>
+                    <p class="text-xl">Online zakazivanje</p>
+                </div>
+                <div class="flex gap-2 items-center">
+                    <p><img src="{% static 'img/icons/akar-icons_schedule (1).png' %}" alt="Kitchen"
+                            class="h-12 object-cover"/></p>
+                    <p class="text-xl">Online zakazivanje</p>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col justify-center items-center w-auto p-10 order-1 md:order-2">
+            <img src="{% static 'img/about2.jpeg' %}" alt="Kitchen" class=" rounded-2xl shadow-xl"/>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="relative w-full  h-[200px] md:h-[300px] flex items-center justify-center">
+    <div class="text-center">
+        <p class="text-3xl text-gray-700">Pored luksuznih haljina, otkrijte i našu kolekciju kežual jakni – za
+            svaki trenutak.</p>
+        <!-- Prvi tekst -->
+        <h2 class=""><span class="font-bold text-5xl">Le Choix</span> </h2>
+        <!-- Drugi tekst -->
+    </div>
+</section>
+
+<section class="mt-10 md:mt-20 mb-10 md:mb-20">
+    <div class="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 p-2 max-w-[1200px]">
+        <div class="flex flex-col justify-center items-center w-auto ">
+            <img src="{% static 'img/le_choix/311139895_642658247400483_3404339147833531191_n.jpg' %}" alt="Kitchen"
+                 class=" rounded-2xl shadow-xl"/>
+        </div>
+        <div class="flex flex-col gap-10 w-auto pr-8 md:pr-64 lg:pr-32  rounded-xl p-2">
+            <h1 class="text-6xl w-[90%]">Le Choix</h1>
+            <p class="text-2xl">Tamo gde se stil susreće sa svakodnevicom – počinje naša priča.</p>
+
+            <p class="text-xl">Naš casual brend nastao je iz želje da svaka žena i devojčica pronađe idealnu jaknu koja spaja stil, udobnost i kvalitet. Verujemo da se moda ne mora birati između izgleda i praktičnosti – zato nudimo pažljivo osmišljene modele za svakodnevne prilike, šetnje i opuštene izlaske. Svaki komad izrađen je od kvalitetnih materijala, prati savremene trendove i dostupan je po pristupačnim cenama. Naša misija je da se u našim jaknama osećate samouvereno, lepo i svoja – u svakom koraku.</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+

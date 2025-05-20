@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Confirmation {% endblock %}
+
+{% block content %}
+
+<section id="successfully_appointment" class="mx-auto my-20 max-w-[500px] px-4">
+    <div class="bg-gray-100 p-10">
+        <div>
+            <p class="text-center">
+                <i class="fa-regular fa-circle-check text-6xl "></i>
+            </p><br>
+            <h2 class="text-2xl text-center">Hvala vam! </h2>
+            <h2 class="text-xl text-center">{{title}} </h2>
+        </div>
+        <br>
+        <div>
+            <p class="text-center">
+                    {{message}}
+            </p>
+        </div>
+        <br>
+        <a href="{% url 'home' %}"
+           class="p-3 bg-black text-center w-fit mx-auto text-white block hover:bg-black/70">Razumem</a>
+    </div>
+
+    <p class="text-center bg-gray-300 text-white p-1 font-semibold">
+        Ukoliko imate dodatna pitanja, slobodno nas
+        <a href="{% url 'contact' %}" class="underline hover:text-blue-50">kontaktirajte</a>.
+    </p>
+</section>
+
+
+{% endblock %}
+

@@ -1,0 +1,108 @@
+{% load static %}
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Miyamije</title>
+
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Uključi Alpine.js u <head> ili pre zatvaranja </body> -->
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+          integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!-- U head sekciji -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Cormorant+Garamond&family=Cinzel&family=Great+Vibes&display=swap"
+          rel="stylesheet">
+
+
+    {% tailwind_css %}
+</head>
+
+<body class="font-cormorant text-gray-800 bg-white">
+
+<div id="url-data" data-appointment-url="{% url 'appointment' %}"
+     data-confirmation-url="{% url 'confirmation' %}"></div>
+
+{% include 'header.html' %}
+
+<!--    <span>Fontovi</span>-->
+<!--    <div>-->
+<!--        <h1 class="font-playfair text-4xl">Nova Kolekcija</h1>-->
+<!--    -->
+<!--        <p class="font-cormorant text-lg">-->
+<!--            Elegancija i stil spojeni u savršenoj haljini.-->
+<!--        </p>-->
+<!--    -->
+<!--        <h2 class="font-cinzel text-3xl uppercase tracking-wide">-->
+<!--            Ekskluzivno-->
+<!--        </h2>-->
+<!--    -->
+<!--        <span class="font-vibes text-2xl text-pink-500">-->
+<!--            Ljubav na prvi pogled-->
+<!--        </span>-->
+<!--    </div>-->
+
+
+{% block content %}
+{% endblock %}
+
+{% include 'footer.html' %}
+{% include 'website/components/scroll_to_top.html' %}
+{% include 'website/components/schedule.html' %}
+
+
+</body>
+</html>
+
+<script src="{% static 'js/scheduleDate.js' %}"></script>
+<script src="{% static 'js/scrollToTop.js' %}"></script>
+<script src="{% static 'js/scheduleAppointment.js' %}"></script>
+
+<script>
+    function toggleLanguageMenu(trigger) {
+        const menu = trigger.nextElementSibling;
+        menu.classList.toggle("hidden");
+
+        // Zatvori sve ostale otvorene menije
+        document.querySelectorAll(".languageMenu").forEach(otherMenu => {
+            if (otherMenu !== menu) otherMenu.classList.add("hidden");
+        });
+    }
+
+    function setLanguage(lang) {
+        // Ovde dodaj logiku za menjanje jezika (npr. preko Django view-a ili localStorage)
+        console.log("Selected language:", lang);
+
+        // Zatvori sve menije
+        document.querySelectorAll(".languageMenu").forEach(menu => menu.classList.add("hidden"));
+    }
+
+    // Klik van menija zatvara dropdown
+    window.addEventListener('click', function (e) {
+        document.querySelectorAll(".languageToggle").forEach(toggle => {
+            const menu = toggle.nextElementSibling;
+            if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+                menu.classList.add("hidden");
+            }
+        });
+    });
+</script>
+<script>
+    const mobileMenu = document.getElementById("mobile-menu");
+    const openBtn = document.getElementById("mobile-menu-button");
+    const closeBtn = document.getElementById("close-menu");
+
+    openBtn.addEventListener("click", () => {
+        mobileMenu.classList.remove("-translate-x-full");
+    });
+
+    closeBtn.addEventListener("click", () => {
+        mobileMenu.classList.add("-translate-x-full");
+    });
+</script>
