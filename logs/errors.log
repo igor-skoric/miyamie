@@ -11392,3 +11392,390 @@ Traceback (most recent call last):
     raise KeyError(
 KeyError: "Key 'slug' not found in 'DressForm'. Choices are: additional_info, category, description, home_page, main_image, name, short_description, size, tag."
 ERROR 2025-06-30 15:54:51,551 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\servers\basehttp.py:213 "GET /admin/website/dress/17/change/ HTTP/1.1" 500 136434
+ERROR 2025-06-30 17:59:10,644 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\utils\log.py:248 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\miyamie\website\views.py", line 28, in home
+    return render(request, 'website/pages/index.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'google_connect' not found. 'google_connect' is not a valid view function or pattern name.
+ERROR 2025-06-30 17:59:10,654 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\servers\basehttp.py:213 "GET / HTTP/1.1" 500 178189
+ERROR 2025-06-30 17:59:38,114 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\utils\log.py:248 Internal Server Error: /en/connect-google/
+Traceback (most recent call last):
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\miyamie\website\utils\google_calendar.py", line 59, in connect_google
+    request.session['google_flow'] = flow.credentials_to_dict()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Flow' object has no attribute 'credentials_to_dict'
+ERROR 2025-06-30 17:59:38,115 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\servers\basehttp.py:213 "GET /en/connect-google/ HTTP/1.1" 500 69616
+ERROR 2025-06-30 18:06:08,173 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\utils\log.py:248 Internal Server Error: /oauth2callback/
+Traceback (most recent call last):
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\miyamie\website\utils\google_calendar.py", line 54, in oauth2callback
+    flow.fetch_token(authorization_response=request.build_absolute_uri())
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\google_auth_oauthlib\flow.py", line 285, in fetch_token
+    return self.oauth2session.fetch_token(self.client_config["token_uri"], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\requests_oauthlib\oauth2_session.py", line 271, in fetch_token
+    self._client.parse_request_uri_response(
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\oauthlib\oauth2\rfc6749\clients\web_application.py", line 220, in parse_request_uri_response
+    response = parse_authorization_code_response(uri, state=state)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\oauthlib\oauth2\rfc6749\parameters.py", line 271, in parse_authorization_code_response
+    raise InsecureTransportError()
+oauthlib.oauth2.rfc6749.errors.InsecureTransportError: (insecure_transport) OAuth 2 MUST utilize https.
+ERROR 2025-06-30 18:06:08,181 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\servers\basehttp.py:213 "GET /oauth2callback/?state=zFpoOEm9vAdposx3alB3veL6xdIc2i&code=4/0AVMBsJhNLgWauxlpzHGSLE1ZlGcl7VLzHXoixvD3s8JncEahFwVIuqVYqoHIs4BGbitd5A&scope=https://www.googleapis.com/auth/calendar HTTP/1.1" 500 89649
+ERROR 2025-06-30 18:07:18,811 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\utils\log.py:248 Internal Server Error: /oauth2callback/
+Traceback (most recent call last):
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\miyamie\website\utils\google_calendar.py", line 60, in oauth2callback
+    return render(request, 'calendar/success.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: calendar/success.html
+ERROR 2025-06-30 18:07:18,817 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\servers\basehttp.py:213 "GET /oauth2callback/?state=zFpoOEm9vAdposx3alB3veL6xdIc2i&code=4/0AVMBsJhNLgWauxlpzHGSLE1ZlGcl7VLzHXoixvD3s8JncEahFwVIuqVYqoHIs4BGbitd5A&scope=https://www.googleapis.com/auth/calendar HTTP/1.1" 500 88472
+ERROR 2025-06-30 18:07:23,083 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\utils\log.py:248 Internal Server Error: /oauth2callback/
+Traceback (most recent call last):
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\miyamie\website\utils\google_calendar.py", line 54, in oauth2callback
+    flow.fetch_token(authorization_response=request.build_absolute_uri())
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\google_auth_oauthlib\flow.py", line 285, in fetch_token
+    return self.oauth2session.fetch_token(self.client_config["token_uri"], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\requests_oauthlib\oauth2_session.py", line 406, in fetch_token
+    self._client.parse_request_body_response(r.text, scope=self.scope)
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\oauthlib\oauth2\rfc6749\clients\base.py", line 426, in parse_request_body_response
+    self.token = parse_token_response(body, scope=scope)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\oauthlib\oauth2\rfc6749\parameters.py", line 444, in parse_token_response
+    validate_token_parameters(params)
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\oauthlib\oauth2\rfc6749\parameters.py", line 451, in validate_token_parameters
+    raise_from_error(params.get('error'), params)
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\oauthlib\oauth2\rfc6749\errors.py", line 398, in raise_from_error
+    raise cls(**kwargs)
+oauthlib.oauth2.rfc6749.errors.InvalidGrantError: (invalid_grant) Bad Request
+ERROR 2025-06-30 18:07:23,088 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\servers\basehttp.py:213 "GET /oauth2callback/?state=zFpoOEm9vAdposx3alB3veL6xdIc2i&code=4/0AVMBsJhNLgWauxlpzHGSLE1ZlGcl7VLzHXoixvD3s8JncEahFwVIuqVYqoHIs4BGbitd5A&scope=https://www.googleapis.com/auth/calendar HTTP/1.1" 500 100963
+ERROR 2025-06-30 18:07:28,106 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\utils\log.py:248 Internal Server Error: /oauth2callback/
+Traceback (most recent call last):
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\miyamie\website\utils\google_calendar.py", line 60, in oauth2callback
+    return render(request, 'calendar/success.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: calendar/success.html
+ERROR 2025-06-30 18:07:28,108 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\servers\basehttp.py:213 "GET /oauth2callback/?state=zFpoOEm9vAdposx3alB3veL6xdIc2i&code=4/0AVMBsJjCCs2YLmTTQf4U17vvfkWqpUMKBjiOtWW3KBqlDBpme2nzoLEJLqrIhYZh3m5m8Q&scope=https://www.googleapis.com/auth/calendar HTTP/1.1" 500 87964
+ERROR 2025-06-30 18:10:18,707 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\utils\log.py:248 Internal Server Error: /oauth2callback/
+Traceback (most recent call last):
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\miyamie\website\utils\google_calendar.py", line 60, in oauth2callback
+    return render(request, 'calendar/success.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: calendar/success.html
+ERROR 2025-06-30 18:10:18,711 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\servers\basehttp.py:213 "GET /oauth2callback/?state=gbBQJFhyn4VcqFxRFnolKVBDex6Zn8&code=4/0AVMBsJgK2Oc-OW_mctBszl7Fo4Obfr6LnN1QIArXUkEjevesVQSK0N2s9wnt2sEMCO_KcQ&scope=https://www.googleapis.com/auth/calendar HTTP/1.1" 500 88151
+ERROR 2025-06-30 18:11:05,859 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\utils\log.py:248 Internal Server Error: /oauth2callback/
+Traceback (most recent call last):
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\miyamie\website\utils\google_calendar.py", line 54, in oauth2callback
+    flow.fetch_token(authorization_response=request.build_absolute_uri())
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\google_auth_oauthlib\flow.py", line 285, in fetch_token
+    return self.oauth2session.fetch_token(self.client_config["token_uri"], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\requests_oauthlib\oauth2_session.py", line 406, in fetch_token
+    self._client.parse_request_body_response(r.text, scope=self.scope)
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\oauthlib\oauth2\rfc6749\clients\base.py", line 426, in parse_request_body_response
+    self.token = parse_token_response(body, scope=scope)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\oauthlib\oauth2\rfc6749\parameters.py", line 444, in parse_token_response
+    validate_token_parameters(params)
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\oauthlib\oauth2\rfc6749\parameters.py", line 451, in validate_token_parameters
+    raise_from_error(params.get('error'), params)
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\oauthlib\oauth2\rfc6749\errors.py", line 398, in raise_from_error
+    raise cls(**kwargs)
+oauthlib.oauth2.rfc6749.errors.InvalidGrantError: (invalid_grant) Bad Request
+ERROR 2025-06-30 18:11:05,872 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\servers\basehttp.py:213 "GET /oauth2callback/?state=gbBQJFhyn4VcqFxRFnolKVBDex6Zn8&code=4/0AVMBsJgK2Oc-OW_mctBszl7Fo4Obfr6LnN1QIArXUkEjevesVQSK0N2s9wnt2sEMCO_KcQ&scope=https://www.googleapis.com/auth/calendar HTTP/1.1" 500 101040
+ERROR 2025-06-30 18:11:10,275 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\utils\log.py:248 Internal Server Error: /oauth2callback/
+Traceback (most recent call last):
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\miyamie\website\utils\google_calendar.py", line 54, in oauth2callback
+    flow.fetch_token(authorization_response=request.build_absolute_uri())
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\google_auth_oauthlib\flow.py", line 285, in fetch_token
+    return self.oauth2session.fetch_token(self.client_config["token_uri"], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\requests_oauthlib\oauth2_session.py", line 406, in fetch_token
+    self._client.parse_request_body_response(r.text, scope=self.scope)
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\oauthlib\oauth2\rfc6749\clients\base.py", line 426, in parse_request_body_response
+    self.token = parse_token_response(body, scope=scope)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\oauthlib\oauth2\rfc6749\parameters.py", line 444, in parse_token_response
+    validate_token_parameters(params)
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\oauthlib\oauth2\rfc6749\parameters.py", line 451, in validate_token_parameters
+    raise_from_error(params.get('error'), params)
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\oauthlib\oauth2\rfc6749\errors.py", line 398, in raise_from_error
+    raise cls(**kwargs)
+oauthlib.oauth2.rfc6749.errors.InvalidGrantError: (invalid_grant) Bad Request
+ERROR 2025-06-30 18:11:10,278 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\servers\basehttp.py:213 "GET /oauth2callback/?state=gbBQJFhyn4VcqFxRFnolKVBDex6Zn8&code=4/0AVMBsJgK2Oc-OW_mctBszl7Fo4Obfr6LnN1QIArXUkEjevesVQSK0N2s9wnt2sEMCO_KcQ&scope=https://www.googleapis.com/auth/calendar HTTP/1.1" 500 101171
+ERROR 2025-06-30 18:11:43,819 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\utils\log.py:248 Internal Server Error: /oauth2callback/
+Traceback (most recent call last):
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\miyamie\website\utils\google_calendar.py", line 54, in oauth2callback
+    flow.fetch_token(authorization_response=request.build_absolute_uri())
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\google_auth_oauthlib\flow.py", line 285, in fetch_token
+    return self.oauth2session.fetch_token(self.client_config["token_uri"], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\requests_oauthlib\oauth2_session.py", line 406, in fetch_token
+    self._client.parse_request_body_response(r.text, scope=self.scope)
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\oauthlib\oauth2\rfc6749\clients\base.py", line 426, in parse_request_body_response
+    self.token = parse_token_response(body, scope=scope)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\oauthlib\oauth2\rfc6749\parameters.py", line 444, in parse_token_response
+    validate_token_parameters(params)
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\oauthlib\oauth2\rfc6749\parameters.py", line 451, in validate_token_parameters
+    raise_from_error(params.get('error'), params)
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\oauthlib\oauth2\rfc6749\errors.py", line 398, in raise_from_error
+    raise cls(**kwargs)
+oauthlib.oauth2.rfc6749.errors.InvalidGrantError: (invalid_grant) Bad Request
+ERROR 2025-06-30 18:11:43,833 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\servers\basehttp.py:213 "GET /oauth2callback/?state=gbBQJFhyn4VcqFxRFnolKVBDex6Zn8&code=4/0AVMBsJgK2Oc-OW_mctBszl7Fo4Obfr6LnN1QIArXUkEjevesVQSK0N2s9wnt2sEMCO_KcQ&scope=https://www.googleapis.com/auth/calendar HTTP/1.1" 500 101040
+ERROR 2025-06-30 18:11:44,735 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\utils\log.py:248 Internal Server Error: /oauth2callback/
+Traceback (most recent call last):
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\miyamie\website\utils\google_calendar.py", line 54, in oauth2callback
+    flow.fetch_token(authorization_response=request.build_absolute_uri())
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\google_auth_oauthlib\flow.py", line 285, in fetch_token
+    return self.oauth2session.fetch_token(self.client_config["token_uri"], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\requests_oauthlib\oauth2_session.py", line 406, in fetch_token
+    self._client.parse_request_body_response(r.text, scope=self.scope)
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\oauthlib\oauth2\rfc6749\clients\base.py", line 426, in parse_request_body_response
+    self.token = parse_token_response(body, scope=scope)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\oauthlib\oauth2\rfc6749\parameters.py", line 444, in parse_token_response
+    validate_token_parameters(params)
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\oauthlib\oauth2\rfc6749\parameters.py", line 451, in validate_token_parameters
+    raise_from_error(params.get('error'), params)
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\oauthlib\oauth2\rfc6749\errors.py", line 398, in raise_from_error
+    raise cls(**kwargs)
+oauthlib.oauth2.rfc6749.errors.InvalidGrantError: (invalid_grant) Bad Request
+ERROR 2025-06-30 18:11:44,737 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\servers\basehttp.py:213 "GET /oauth2callback/?state=gbBQJFhyn4VcqFxRFnolKVBDex6Zn8&code=4/0AVMBsJgK2Oc-OW_mctBszl7Fo4Obfr6LnN1QIArXUkEjevesVQSK0N2s9wnt2sEMCO_KcQ&scope=https://www.googleapis.com/auth/calendar HTTP/1.1" 500 101171
+ERROR 2025-06-30 18:15:35,304 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\utils\log.py:248 Internal Server Error: /reservation/
+Traceback (most recent call last):
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\miyamie\website\views.py", line 237, in create_reservation_view
+    return render(request, 'reservation_form.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: reservation_form.html
+ERROR 2025-06-30 18:15:35,313 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\servers\basehttp.py:213 "GET /reservation/?start_time=10 HTTP/1.1" 500 85094
+ERROR 2025-06-30 18:18:48,542 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\utils\log.py:248 Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\miyamie\website\views.py", line 28, in home
+    return render(request, 'website/pages/index.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'connect_google' not found. 'connect_google' is not a valid view function or pattern name.
+ERROR 2025-06-30 18:18:48,546 D:\projects\miyamie\env\scripts\python.py\Lib\site-packages\django\core\servers\basehttp.py:213 "GET / HTTP/1.1" 500 177949

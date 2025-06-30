@@ -2511,6 +2511,10 @@ select {
     justify-content: center;
   }
 
+  .lg\:p-3 {
+    padding: 0.75rem;
+  }
+
   .lg\:px-24 {
     padding-left: 6rem;
     padding-right: 6rem;

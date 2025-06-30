@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Dress, Category, Appointment
+from .models import Dress, Category, Appointment, Reservation
 from .forms import AppointmentForm
 from django.http import JsonResponse
 from datetime import time
@@ -10,10 +10,12 @@ from django.conf import settings
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.db.models import Q
+from .utils.google_calendar import create_google_calendar_event
+
 import os
 import re
-
 import logging
+
 logger = logging.getLogger("django")
 
 
@@ -24,8 +26,6 @@ def home(request):
 
     context = {'short_dresses': short_dresses, 'long_dresses': long_dresses, 'bestseller_dresses': bestseller_dresses}
     return render(request, 'website/pages/index.html', context)
-
-
 
 
 def showroom(request):
@@ -43,7 +43,6 @@ def showroom(request):
     image_paths = [f'img/showroomcompresed/{f}' for f in image_files]
     context = {'image_paths': image_paths}
     return render(request, 'website/pages/showroom.html', context)
-
 
 
 def contact(request):
@@ -205,3 +204,34 @@ def question(request):
         email.send()
     except Exception as e:
         logger.error(f"ERROR question: {e}")
+
+        # views.py
+
+
+def create_reservation_view(request):
+    if request.method == 'POST':
+        # Primer kako uzimaš podatke iz forme (menički, prilagodi)
+        start_time = request.POST.get('start_time')
+        end_time = request.POST.get('end_time')
+        description = request.POST.get('description', '')
+
+        reservation = Reservation.objects.create(
+            user=request.user,
+            start_time=start_time,
+            end_time=end_time,
+            description=description
+        )
+
+        # Pretpostavimo da si token čuvao u korisnikovom profilu ili sesiji
+        token_json = request.user.profile.google_token_json  # ili iz sesije
+
+        if token_json:
+            try:
+                event_id = create_google_calendar_event(token_json, reservation)
+                print(f"Google event created with ID: {event_id}")
+            except Exception as e:
+                print("Failed to create Google Calendar event:", e)
+
+        return redirect('website/pages/email.com')
+
+    return redirect('website/pages/email.com')
