@@ -4,11 +4,15 @@ from .forms import AppointmentForm
 from django.http import JsonResponse
 from datetime import time
 from django.contrib import messages
-
+from django.utils.translation import gettext_lazy as _
 from email.utils import formataddr
 from django.conf import settings
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
+from django.db.models import Q
+import os
+import re
+
 import logging
 logger = logging.getLogger("django")
 
@@ -22,17 +26,35 @@ def home(request):
     return render(request, 'website/pages/index.html', context)
 
 
+
+
+def showroom(request):
+    image_folder = os.path.join(settings.BASE_DIR, 'static', 'img', 'showroomcompresed')
+
+    def extract_number(filename):
+        match = re.search(r'(\d+)', filename)
+        return int(match.group(1)) if match else 0
+
+    image_files = sorted(
+        [f for f in os.listdir(image_folder) if f.lower().endswith('.webp')],
+        key=extract_number
+    )
+
+    image_paths = [f'img/showroomcompresed/{f}' for f in image_files]
+    context = {'image_paths': image_paths}
+    return render(request, 'website/pages/showroom.html', context)
+
+
+
 def contact(request):
 
     if request.POST:
-        print(request.POST)
         question(request.POST)
         title = 'Uspešno ste poslali poruku.'
         message = ''
         context = {'message': message, 'title': title}
         return render(request, 'website/pages/confirmation.html', context)
     else:
-        print(request.GET)
         context = {}
         return render(request, 'website/pages/contact.html', context)
 
@@ -58,14 +80,31 @@ def single_product(request, pk):
 
 
 def products(request, slug):
-    category = get_object_or_404(Category, slug=slug)
-    if slug == 'bestseller':
+    query = request.GET.get('search', '').strip()
+
+    if slug not in ['all', 'lechoix', 'search', 'for_sale', 'rent']:
+        category = get_object_or_404(Category, slug=slug)
+
+    if slug == 'all':
+        dresses = Dress.objects.filter(category__brand__slug='miyamia')
+    elif slug == 'lechoix':
+        dresses = Dress.objects.filter(category__brand__slug='lechoix')
+    elif slug == 'bestseller':
         dresses = Dress.objects.filter(tag='bestseller')
+    elif slug == 'search':
+        dresses = Dress.objects.filter(
+            Q(name__icontains=query)
+        )
+    elif slug == 'for_sale':
+        dresses = Dress.objects.filter(tag='for_sale')
+    elif slug == 'rent':
+        dresses = Dress.objects.filter(tag='rent')
     else:
         dresses = Dress.objects.filter(category=category)
 
+
+
     return render(request, 'website/pages/products.html', {
-        'category': category,
         'dresses': dresses
     })
 
@@ -97,10 +136,8 @@ def appointment_form(request):
                 send_reservation_email(context)
                 return JsonResponse({'success': True, 'message': 'Uspešno zakazano!'})
             except Exception as e:
-                print("❌ Greška prilikom čuvanja:", e)
                 return JsonResponse({'success': False, 'message': 'Greška prilikom čuvanja podataka.'}, status=500)
         else:
-            print("❌ Forma nije validna:", form.errors)
             return JsonResponse({'success': False, 'message': 'Neispravni podaci.', 'errors': form.errors}, status=400)
 
     return JsonResponse({'success': False, 'message': 'Samo POST zahtevi su dozvoljeni.'}, status=405)

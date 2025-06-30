@@ -1,4 +1,6 @@
 {% load static %}
+{% load i18n %}
+
 <footer class="bg-black text-white/50 py-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-between">
@@ -23,7 +25,7 @@
 
             <!-- Kolona 2 -->
             <div>
-                <h3 class="text-lg font-semibold mb-4 text-white/70 border-l-4 border-white/30 pl-2">KONTAKT</h3>
+                <h3 class="text-lg font-semibold mb-4 text-white/70 border-l-4 border-white/30 pl-2">{% trans 'KONTAKT' %}</h3>
                 <ul class="space-y-2 text-sm">
                     <li><a href="tel:{{config.contact_phone}}" class="hover:underline">{{config.contact_phone}}</a></li>
                     <li><a href="mailto:{{config.email}}" class="hover:underline">{{config.email}}</a></li>
@@ -31,7 +33,7 @@
 
                 <br><br>
 
-                <h3 class="text-lg font-semibold mb-4 text-white/70 border-l-4 border-white/30 pl-2">LOKACIJA</h3>
+                <h3 class="text-lg font-semibold mb-4 text-white/70 border-l-4 border-white/30 pl-2">{% trans 'LOKACIJA' %}</h3>
                 <ul class="space-y-2 text-sm">
                     <li>
                         <a href="https://www.google.com/maps/search/?api=1&query=Bulevar+Arsenija+Čarnojevića+82,+Novi+Beograd"
@@ -45,22 +47,22 @@
 
             <!-- Kolona 3 -->
             <div>
-                <h3 class="text-lg font-semibold mb-4 text-white/70 border-l-4 border-white/30 pl-2">STRANICE</h3>
+                <h3 class="text-lg font-semibold mb-4 text-white/70 border-l-4 border-white/30 pl-2">{% trans 'STRANICE' %}</h3>
                 <ul class="space-y-2 ">
-                    <li><a href="{% url 'home' %}" class="hover:underline">Naslovna</a></li>
-                    <li><a href="{% url 'products' 'short' %}" class="hover:underline">Kratke haljine</a></li>
-                    <li><a href="{% url 'products' 'long' %}" class="hover:underline">Duge haljine</a></li>
-                    <li><a href="{% url 'products' 'bestseller' %}" class="hover:underline">Najprodavanije</a></li>
-                    <li><a href="{% url 'products' 'woman' %}" class="hover:underline">Le choix - Žene</a></li>
-                    <li><a href="{% url 'products' 'kids' %}" class="hover:underline">Le choix - Deca</a></li>
-                    <li><a href="{% url 'about' %}" class="hover:underline">O nama</a></li>
-                    <li><a href="{% url 'contact' %}" class="hover:underline">Kontakt</a></li>
+                    <li><a href="{% url 'home' %}" class="hover:underline">{% trans 'Naslovna' %}</a></li>
+                    <li><a href="{% url 'products' 'short' %}" class="hover:underline">{% trans 'Kratke haljine' %}</a></li>
+                    <li><a href="{% url 'products' 'long' %}" class="hover:underline">{% trans 'Duge haljine' %}</a></li>
+                    <li><a href="{% url 'products' 'bestseller' %}" class="hover:underline">{% trans 'Najprodavanije' %}</a></li>
+                    <li><a href="{% url 'products' 'woman' %}" class="hover:underline">{% trans 'Le choix - Žene' %}</a></li>
+                    <li><a href="{% url 'products' 'girls' %}" class="hover:underline">{% trans 'Le choix - Devojčice' %}</a></li>
+                    <li><a href="{% url 'about' %}" class="hover:underline">{% trans 'O nama' %}</a></li>
+                    <li><a href="{% url 'contact' %}" class="hover:underline">{% trans 'Kontakt' %}</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="border-t border-gray-700 mt-10 pt-6 text-sm text-gray-400 flex justify-between">
-            <div>&copy; 2025 MIYAMIE. Sva prava zadržana.</div>
+            <div>&copy; {% trans '2025 MIYAMIE. Sva prava zadržana.' %}</div>
 
             <!--            <div class="relative">-->
             <!--                &lt;!&ndash; Dugme za otvaranje &ndash;&gt;-->

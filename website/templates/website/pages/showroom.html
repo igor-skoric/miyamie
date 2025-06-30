@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block title %}Showroom{% endblock %}
+
+{% block content %}
+
+
+{% include 'website/components/breadcrumbs.html' %}
+
+
+<section class="relative bg-black text-white h-[400px] bg-scroll bg-center bg-cover"
+         style="background-image: url('{% static 'img/showroomcompresed/hero.webp' %}');">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <div class="absolute inset-0 flex items-center justify-center text-center p-6">
+        <div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">{% trans "Dobrodošli u naš showroom" %}</h1>
+            <p class="text-xl md:text-2xl max-w-2xl mx-auto">{% trans "Iznajmljivanje haljina u prostoru koji odiše elegancijom i stilom" %}</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-16 px-6 bg-white text-gray-800 text-center">
+    <h2 class="text-3xl font-semibold mb-24 text-gray-700">{% trans "Zašto naš showroom?" %}</h2>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div class="transform transition-transform duration-300 hover:-translate-y-2 shadow-md hover:shadow-lg rounded-xl p-10 bg-white">
+            <img src="{% static 'img/icons/location-vector.png' %}" class="mx-auto h-16 mb-4" alt="">
+            <h3 class="text-xl font-semibold mb-2">{% trans "Ekskluzivna lokacija" %}</h3>
+            <p>{% trans "Nalazimo se na geografskom centru Beograda" %}</p>
+        </div>
+        <div class="transform transition-transform duration-300 hover:-translate-y-2 shadow-md hover:shadow-lg rounded-xl p-10 bg-white">
+            <img src="{% static 'img/icons/sofa.png' %}" class="mx-auto h-16 mb-4" alt="">
+            <h3 class="text-xl font-semibold mb-2">{% trans "Elegantan enterijer" %}</h3>
+            <p>{% trans "Mesto gde svaka haljina otkriva vašu ženstvenost." %}</p>
+        </div>
+        <div class="transform transition-transform duration-300 hover:-translate-y-2 shadow-md hover:shadow-lg rounded-xl p-10 bg-white">
+            <img src="{% static 'img/icons/handshake-vector.png' %}" class="mx-auto h-16 mb-4" alt="">
+            <h3 class="text-xl font-semibold mb-2">{% trans "Prijatan doček" %}</h3>
+            <p>{% trans "Uvek vas dočekujemo sa osmehom, uz piće dobrodošlice." %}</p>
+        </div>
+        <div class="transform transition-transform duration-300 hover:-translate-y-2 shadow-md hover:shadow-lg rounded-xl p-10 bg-white">
+            <img src="{% static 'img/icons/lock-vector.png' %}" class="mx-auto h-16 mb-4" alt="">
+            <h3 class="text-xl font-semibold mb-2">{% trans "Mir i privatnost" %}</h3>
+            <p>{% trans "Zagarantovan mir i intimna atmosfera za svaku probu." %}</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-16 px-4">
+    <h2 class="text-3xl font-bold text-center mb-10">{% trans "Showroom Galerija" %}</h2>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+        {% for path in image_paths %}
+        <a data-fancybox="gallery" href="{% static path %}">
+            <img loading="lazy" src="{% static path %}" alt="{{ path }}"
+                 class="w-full h-48 object-cover rounded-2xl shadow-xl transition-transform duration-300"/>
+        </a>
+        {% endfor %}
+
+        <!-- Dodaj još slika... -->
+    </div>
+</section>
+
+
+{% endblock %}
+

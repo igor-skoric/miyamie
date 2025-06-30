@@ -1,23 +1,30 @@
 {% extends 'base.html' %}
 
 {% load static %}
-{% block title %}Products Page{% endblock %}
+{% load i18n %}
+
+{% block title %}Proizvodi{% endblock %}
 
 {% block content %}
 {% include 'website/components/breadcrumbs.html' %}
 
+<style>
+    [x-cloak] {
+    display: none !important;
+}
 
-<!--<h1 class="text-center text-4xl font-semibold py-10 text-black/80">{{category.name}}</h1>-->
+</style>
+
 <h1 class="text-center text-4xl font-semibold py-10 text-black/80"></h1>
-
 
 <section class="container mx-auto" x-data="{
         showFilters: false,
         selectedColor: '',
+        selectedSize: '',
         onlyNew: false,
         products: [
         {% for product in dresses %}
-            { id: {{product.id}}, name: '{{product.name}}', color: 'Plava', image: '{{product.main_image.url}}', tag: '{% if product.tag %}{{product.tag|upper}}{% endif %}' },
+            { id: {{product.id}}, name: '{{product.name}}', color: 'Plava', image: '{{product.main_image.url}}', tag: '{% if product.tag %}{{product.tag|upper}}{% endif %}', size:'{{product.size|upper}}' },
         {% endfor %}
         ],
         get filteredProducts() {
@@ -26,6 +33,12 @@
             if (this.selectedColor !== ''){
                 result = result.filter(p => p.color === this.selectedColor);
             }
+
+            if (this.selectedSize !== ''){
+                result = result.filter(p => p.size === this.selectedSize);
+            }
+
+
             // Filter
 
             if (this.onlyNew) {
@@ -42,18 +55,19 @@
         <!-- Gornji red -->
         <div class="flex gap-2 md:gap-2 items-center">
             <div>
-                <span class="text-black/60">Ukupno <span x-text="filteredProducts.length"></span> rezultata</span>
-                <span class="font-bold ml-4">Filteri</span>
+                <span class="text-xl text-black/60">{% trans 'Ukupno' %} <span
+                        x-text="filteredProducts.length"></span> {% trans 'rezultata' %}</span>
+                <span class="font-bold ml-4">{% trans 'Filteri' %}</span>
             </div>
             <button @click="showFilters = !showFilters" class="text-blue-600 font-semibold hover:underline">
                 <img src="{% static 'img/icons/filter.png' %}" alt="Haljina 1" class="h-4">
             </button>
         </div>
 
-
         <!-- Filter sekcija -->
         <div
                 x-show="showFilters"
+                x-cloak
                 x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-start="opacity-0 scale-95"
                 x-transition:enter-end="opacity-100 scale-100"
@@ -62,30 +76,38 @@
                 x-transition:leave-end="opacity-0 scale-95"
                 class="bg-gray-100 p-6 mt-4 rounded-lg flex gap-10 md:gap-20 md:flex-row flex-col">
 
-            <!-- Filter po boji -->
-            <div>
-                <h2 class="border-l-4 border-black/50 pl-2 font-semibold text-xl text-black/80">Sortiraj po:</h2>
-                <div class="pl-4 mt-2 space-y-1">
-                    <button @click="onlyNew = true;" class="block hover:underline">New</button>
-                    <!--                    <button @click="bestSeller = 'bestseller'" class="block hover:underline">BestSeller</button>-->
-                </div>
-            </div>
+            <!-- Sortiraj po -->
+            <!--            <div>-->
+            <!--                <h2 class="border-l-4 border-black/50 pl-2 font-semibold text-xl text-black/80">Sortiraj po:</h2>-->
+            <!--                <div class="pl-4 mt-2 space-y-1">-->
+            <!--                    <button @click="onlyNew = true;" class="block hover:underline">New</button>-->
+            <!--                    &lt;!&ndash;                    <button @click="bestSeller = 'bestseller'" class="block hover:underline">BestSeller</button>&ndash;&gt;-->
+            <!--                </div>-->
+            <!--            </div>-->
 
             <!-- Filter po boji -->
+<!--            <div>-->
+<!--                <h2 class="border-l-4 border-black/50 pl-2 font-semibold text-xl text-black/80">Filtriraj po boji:</h2>-->
+<!--                <div class="pl-4 mt-2 space-y-1">-->
+<!--                    <button @click="selectedColor = ''" class="block hover:underline">Sve</button>-->
+<!--                    <button @click="selectedColor = 'Plava'" class="block hover:underline">Plava</button>-->
+<!--                    <button @click="selectedColor = 'Zuta'" class="block hover:underline">Žuta</button>-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <!-- Filter po velicini -->
             <div>
-                <h2 class="border-l-4 border-black/50 pl-2 font-semibold text-xl text-black/80">Filtriraj po boji:</h2>
+                <h2 class="border-l-4 border-black/50 pl-2 font-semibold text-xl text-black/80">Filtriraj po
+                    veličini:</h2>
                 <div class="pl-4 mt-2 space-y-1">
-                    <button @click="selectedColor = ''" class="block hover:underline">Sve</button>
-                    <button @click="selectedColor = 'Plava'" class="block hover:underline">Plava</button>
-                    <button @click="selectedColor = 'Zuta'" class="block hover:underline">Žuta</button>
+                    <button @click="selectedSize = 'STANDARD'" class="block hover:underline">Standard</button>
+                    <button @click="selectedSize = 'XL'" class="block hover:underline">XL</button>
                 </div>
             </div>
-
         </div>
     </div>
 
-
-    <div class="mt-4 p-4 flex gap-5" x-show="onlyNew || selectedColor">
+    <div class="mt-4 p-4 flex gap-5" x-cloak x-show="onlyNew || selectedColor || selectedSize">
         <div x-show="onlyNew" class="bg-gray-100  px-2 py-1 rounded w-fit flex justify-end text-gray-800">Novo
             <span @click="onlyNew = false;" class="cursor-pointer ml-2"> X</span>
         </div>
@@ -95,34 +117,42 @@
             <span @click=" selectedColor ='';" class="cursor-pointer ml-2"> X</span>
         </span>
 
-        <button @click="selectedColor = ''; onlyNew = false;"
+        <span x-show="selectedSize" class="bg-gray-100 text-gray-800 px-2 py-1 rounded">
+            <span x-text="selectedSize.toUpperCase()"></span>
+            <span @click=" selectedSize ='';" class="cursor-pointer ml-2"> X</span>
+        </span>
+
+        <button @click="selectedSize = '';"
                 class="ml-2 bg-black text-white px-3 py-1 rounded text-sm hover:bg-black/50"> X Resetuj filtere
         </button>
     </div>
 
     <section class="p-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
-            <template x-for="product in filteredProducts" :key="product.id">
-                <a :href="`/single_product/${product.id}`" :data-id="product.id">
-                    <!-- Dodaj klasu 'group' na wrapper div -->
-                    <div class="relative group">
-                        <img :src="product.image" alt="Proizvod"
-                             class="sm:w-[400px] sm:h-[500px] object-cover rounded"/>
+        <template x-if="filteredProducts.length > 0">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10">
+                <template x-for="product in filteredProducts" :key="product.id">
+                    <a :href="`/single_product/${product.id}`" :data-id="product.id">
+                        <!-- Dodaj klasu 'group' na wrapper div -->
+                        <div class="relative group">
+                            <img :src="product.image" alt="Proizvod"
+                                 class="sm:w-[400px] sm:h-[500px] object-cover rounded"/>
 
-                        <span class="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 rounded"
-                              x-text="product.tag" x-show="product.tag"></span>
+                            <span class="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 rounded"
+                                  x-text="product.tag" x-show="product.tag"></span>
 
-                        <!-- h3 sa animacijom -->
-                        <h3 class="py-5 bg-white text-xl mt-2 text-center font-medium text-gray-800 transition transform duration-300 group-hover:-translate-y-16"
-                            x-text="product.name">
-                        </h3>
-                    </div>
-                </a>
-            </template>
-
-        </div>
+                            <!-- h3 sa animacijom -->
+                            <h3 class="py-5 bg-white text-xl mt-2 text-center font-medium text-gray-800 transition transform duration-300 group-hover:-translate-y-16"
+                                x-text="product.name">
+                            </h3>
+                        </div>
+                    </a>
+                </template>
+            </div>
+        </template>
+        <template x-if="filteredProducts.length === 0">
+            <p class="text-3xl text-center text-gray-600 py-10">Nema rezultata.</p>
+        </template>
     </section>
-
 
 </section>
 

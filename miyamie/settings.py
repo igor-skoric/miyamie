@@ -44,11 +44,14 @@ INSTALLED_APPS = [
     'whitenoise',
     'django_browser_reload',
     'jazzmin',
+    'django_ckeditor_5',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -71,6 +74,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'website.context_processors.config',
                 'website.context_processors.breadcrumbs',
+                'django.template.context_processors.i18n',
             ],
         },
     },
@@ -109,13 +113,22 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'sr'
+
+LANGUAGES = [
+    ('sr', 'Srpski'),
+    ('en', 'English'),
+]
 
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
 USE_TZ = True
+
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale'),
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
@@ -229,4 +242,18 @@ JAZZMIN_SETTINGS = {
             "permissions": ["auth.view_user"]
         }]
     },
+}
+
+CKEDITOR_5_CONFIGS = {
+    "default": {
+        "toolbar": [
+            "heading", "|", "bold", "italic", "link", "bulletedList", "numberedList", "|",
+            "outdent", "indent", "|", "blockQuote", "insertTable", "mediaEmbed", "undo", "redo"
+        ],
+        "language": "en",
+    },
+    "extends": {
+        "toolbar": "full",
+        "language": "en",
+    }
 }

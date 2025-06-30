@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
 {% load static %}
-{% block title %}Contact Page{% endblock %}
+{% load i18n %}
+
+{% block title %}Kontakt{% endblock %}
 
 {% block content %}
 {% include 'website/components/breadcrumbs.html' %}
@@ -15,7 +17,7 @@
                 </div>
 
                 <div>
-                    <p class="text-2xl font-semibold">Kontakt</p>
+                    <p class="text-2xl font-semibold">{% trans "Kontakt" %}</p>
                     <p>{{config.contact_phone}}</p>
                 </div>
 
@@ -29,7 +31,7 @@
                          class="w-12 md:w-18">
                 </div>
                 <div>
-                    <p class="text-2xl font-semibold">Lokacija</p>
+                    <p class="text-2xl font-semibold">{% trans "Lokacija" %}</p>
                     <p>{{config.address}}</p>
                 </div>
             </div>
@@ -48,38 +50,40 @@
     </div>
 
     <div class="flex flex-col lg:flex-row gap-5 mt-20">
-        <div>
+        <div class="">
             <!-- Forma -->
             <div id="formContainer" class="bg-white shadow-xl rounded-l-lg p-6 space-y-4">
-                <h2 class="text-3xl md:text-5xl font-semibold">Budite slobodni da nas kontaktirate.</h2><br>
+                <h2 class="text-3xl md:text-5xl font-semibold">{% trans "Budite slobodni da nas kontaktirate." %}</h2><br>
                 <form class="" method="POST" action="{% url 'contact' %}">
                     {% csrf_token %}
-                    <label>Ime</label>
-                    <input type="text" placeholder="Ime" name="name" class="w-full border border-gray-300 rounded px-4 py-2 mb-4"/>
+                    <label>{% trans "Ime" %}</label>
+                    <input type="text" placeholder="Ime" name="name"
+                           class="w-full border border-gray-300 rounded px-4 py-2 mb-4"/>
                     <label>Email</label>
                     <input type="email" placeholder="Email" name="email"
                            class="w-full border border-gray-300 rounded px-4 py-2 mb-4"/>
-                    <label>Broj Telefona</label>
-                    <input type="tel" placeholder="tel" name="phone" class="w-full border border-gray-300 rounded px-4 py-2 mb-4"/>
-                    <label>Poruka</label>
-                    <textarea placeholder="Poruka" rows="4" name="message"
+                    <label>{% trans "Broj Telefona" %}</label>
+                    <input type="tel" placeholder="tel" name="phone"
+                           class="w-full border border-gray-300 rounded px-4 py-2 mb-4"/>
+                    <label>{% trans "Poruka" %}</label>
+                    <textarea placeholder="{% trans 'Poruka' %}" rows="4" name="message"
                               class="w-full border border-gray-300 rounded px-4 py-2 mb-4"></textarea>
 
 
                     <button type="submit" class="w-full bg-black text-white py-2 rounded hover:bg-gray-700 transition">
-                        Pošalji
+                        {% trans "Pošalji" %}
                     </button>
                 </form>
             </div>
         </div>
         <div>
-            <img src="{% static 'img/AD2128-01_edited.progressive.webp' %}" alt="" class="">
+            <img src="{% static 'img/contact.jpg' %}" alt="" class="w-[800px] rounded">
         </div>
     </div>
 </section>
 
-<section class="py-20" id="maps">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d386.4470995151205!2d20.412831939102915!3d44.809081793976134!2m3!1f31.358166189111763!2f65.41826557725891!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x475a6500223ffe89%3A0xc104aaec42fa2eba!2sArena%20Lux!5e1!3m2!1sen!2srs!4v1746021697804!5m2!1sen!2srs"
+<section class="mt-20" id="maps">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d465.78022934892215!2d20.416989358308317!3d44.81330873441196!2m3!1f20.084388999999998!2f18.162891838549893!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x475a65006e2a2add%3A0x6d3a59a2de74c879!2sMiyaMie%20Haljine!5e1!3m2!1ssr!2srs!4v1751273752940!5m2!1ssr!2srs"
             style="border:0;" allowfullscreen="" loading="lazy" class="w-full h-[500px]"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>

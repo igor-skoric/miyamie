@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
 {% load static %}
-{% block title %}Index Page{% endblock %}
+{% load i18n %}
+
+{% block title %}Naslovna{% endblock %}
 
 {% block content %}
 
@@ -11,18 +13,18 @@
 <section class="relative w-full h-[300px] flex items-center justify-center px-5">
     <div class="text-center">
         <!-- Prvi tekst -->
-        <h2 class="font-playfair text-4xl font-bold mb-4">ELEGANCIJA KOJA OSVAJA SVET</h2>
+        <h2 class="font-playfair text-4xl font-bold mb-4">{% trans 'ELEGANCIJA KOJA OSVAJA SVET' %}</h2>
         <!-- Drugi tekst -->
-        <p class="text-lg text-gray-700">Otkrijte našu kolekciju luksuznih haljina koje definišu sofisticiranost.</p>
+        <p class="text-lg text-gray-700">{% trans 'Otkrijte našu kolekciju luksuznih haljina koje definišu sofisticiranost.' %}</p>
     </div>
 </section>
 
 <section id="long_dress" class="">
-    <h3 class="font-playfair px-5 text-2xl md:text-4xl mb-4 text-center">DUGE HALJINE</h3><br>
+    <h3 class="font-playfair px-5 text-2xl md:text-4xl mb-4 text-center">{% trans 'DUGE HALJINE' %}</h3><br>
 
     <div class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {% for dress in long_dresses %}
                 <a href="{% url 'single_product' dress.id %}" class="relative group">
                     <!-- Slika 1 -->
@@ -36,9 +38,9 @@
                             <p class="text-white text-xl font-semibold"></p>
                         </div>
                     </div>
-                    {% if dress.tag %}
-                        <span class="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 rounded"> {{dress.tag}}</span>
-                    {% endif %}
+<!--                    {% if dress.tag %}-->
+<!--                        <span class="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 rounded"> {{dress.tag}}</span>-->
+<!--                    {% endif %}-->
                     <!-- Naziv haljine -->
                     <h3 class="p-5 text-xl text-center font-medium text-gray-800 transition transform duration-300 group-hover:-translate-y-24 group-hover:text-white">
                         {{ dress.name }}
@@ -50,13 +52,11 @@
     </div>
 </section>
 
-
 <section id="short_dress" class="">
-
     <div class="bg-gray-50">
-        <h3 class="py-16 font-playfair px-5 mt-20 text-2xl md:text-4xl mb-4 text-center">KRATKE HALJINE</h3>
+        <h3 class="py-16 font-playfair px-5 mt-20 text-2xl md:text-4xl mb-4 text-center">{% trans 'KRATKE HALJINE' %}</h3>
         <div class="container mx-auto px-4">
-            <div class=" grid grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {% for short_dress in short_dresses %}
 
                 <a href="{% url 'single_product' short_dress.id %}" class="relative group" data="{{short_dress.tag}}">
@@ -71,9 +71,9 @@
                             <p class="text-white text-xl font-semibold"></p>
                         </div>
                     </div>
-                    {% if short_dress.tag %}
-                        <span class="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 rounded"> {{short_dress.tag}}</span>
-                    {% endif %}
+<!--                    {% if short_dress.tag %}-->
+<!--                        <span class="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 rounded"> {{short_dress.tag}}</span>-->
+<!--                    {% endif %}-->
                     <!-- Naziv haljine -->
                     <h3 class="p-5 text-xl text-center font-medium text-gray-800 transition transform duration-300 group-hover:-translate-y-24 group-hover:text-white">
                         {{ short_dress.name }}
@@ -86,17 +86,15 @@
 
 </section>
 
-
 <section class="image_section">
     <img src="{% static 'img/cover2.jpg' %}" alt="Haljina 1" class="w-full h-auto object-cover rounded-lg">
 </section>
 
 <section id="best_seller" class="">
-    <h3 class="font-cinzel px-5 my-20 text-2xl md:text-4xl text-center">NAJPRODAVANIJE HALJINE</h3>
+    <h3 class="font-cinzel px-5 my-20 text-2xl md:text-4xl text-center">{% trans 'NAJPRODAVANIJE HALJINE' %}</h3>
     <div class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-
+            <div class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {% for bestseller_dress in bestseller_dresses %}
 
                 <a href="{% url 'single_product' bestseller_dress.id %}" class="relative group">
@@ -111,9 +109,9 @@
                             <p class="text-white text-xl font-semibold"></p>
                         </div>
                     </div>
-                    {% if bestseller_dress.tag %}
-                        <span class="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 rounded"> {{bestseller_dress.tag}}</span>
-                    {% endif %}
+<!--                    {% if bestseller_dress.tag %}-->
+<!--                        <span class="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 rounded"> {{bestseller_dress.tag}}</span>-->
+<!--                    {% endif %}-->
                     <!-- Naziv haljine -->
                     <h3 class="p-5 text-xl text-center font-medium text-gray-800 transition transform duration-300 group-hover:-translate-y-24 group-hover:text-white">
                         {{ bestseller_dress.name }}
@@ -132,7 +130,7 @@
         <div class="text-center">
             <!-- Prvi tekst -->
 
-            <p class="text-xl text-gray-700">Otkrijte i naš casual brend</p>
+            <p class="text-xl text-gray-700">{% trans 'Otkrijte i naš casual brend' %}</p>
 
             <h2 class="font-playfair text-6xl font-bold mb-4">Le choix</h2>
             <!-- Drugi tekst -->
@@ -141,21 +139,19 @@
     </div>
     <img src="{% static 'img/cover.jpg' %}" alt="Haljina 1" class="w-full h-[500px] object-cover">
     <div class="flex mx-auto text-2xl mt-10 max-w-[800px]">
-        <p class="text-center w-fit">Predstavljamo naš casual brend koji spaja udobnost i stil! U ponudi imamo moderne
-            casual jakne za žene i devojčice – idealne za svaki dan, šetnju ili izlazak. Kvalitetni materijali, trendi
-            krojevi i pristupačne cene. Izaberi svoju omiljenu jaknu i zasijaj u svakom koraku!</p>
+        <p class="text-center w-fit">{% trans 'Predstavljamo naš casual brend koji spaja udobnost i stil! U ponudi imamo moderne casual jakne za žene i devojčice – idealne za svaki dan, šetnju ili izlazak. Kvalitetni materijali, trendi krojevi i pristupačne cene. Izaberi svoju omiljenu jaknu i zasijaj u svakom koraku!' %}</p>
     </div>
     <div class="flex gap-5 justify-center mt-10 flex-col md:flex-row">
         <a href="{% url 'products' 'woman' %}">
             <img src="{% static 'img/le_choix/269787931_902158197153317_2511143532287720393_n.jpg' %}" alt="Haljina 1"
                  class="w-full h-[500px] object-cover">
-            <p class="mt-5 text-4xl text-center">Žene</p>
+            <p class="mt-5 text-4xl text-center">{% trans 'Žene' %}</p>
         </a>
         <a href="{% url 'products' 'girls' %}">
             <img src="{% static 'img/le_choix/272995660_4957446594305692_8334829264135824333_n.jpg' %}" alt="Haljina 1"
                  class="w-full h-[500px] object-cover">
 
-            <p class="mt-5 text-4xl text-center">Devojčice</p>
+            <p class="mt-5 text-4xl text-center">{% trans 'Devojčice' %}</p>
         </a>
     </div>
 </section>
@@ -163,7 +159,7 @@
 <section class="p-5 md:p-16 relative w-full h-[300px]  flex flex-col items-center justify-center">
     <div class="text-center">
         <!-- Prvi tekst -->
-        <h2 class="text-4xl font-bold mb-4">Iskustvo naših klijenata</h2>
+        <h2 class="text-4xl font-bold mb-4">{% trans 'Iskustvo naših klijenata' %}</h2>
         <!-- Drugi tekst -->
         <p class="text-lg text-gray-700 max-w-[600px]">Ljudi su nam uvek na prvom mestu – zato želimo da se svi osećaju
             prijatno, a

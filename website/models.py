@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from django_ckeditor_5.fields import CKEditor5Field
 
 
 class Config(models.Model):
@@ -9,6 +10,8 @@ class Config(models.Model):
     facebook_link = models.CharField(max_length=255, blank=True, null=True, default='www.facebook.com')
     tiktok_link = models.CharField(max_length=255, blank=True, null=True, default='www.tiktok.com')
     address = models.CharField(max_length=255, blank=True, null=True, default='defautl address')
+    delivery_info = CKEditor5Field('Sadržaj',  default="Delivery information")
+    delivery_info_en = CKEditor5Field('Content (en)', default="Delivery information")
 
 
 class Appointment(models.Model):
@@ -54,11 +57,19 @@ class Dress(models.Model):
         ('new', 'New'),
         ('bestseller', 'Bestseller'),
         ('sale', 'Sale'),
+        ('for_sale', 'For Sale'),
+        ('rent', 'Rent'),
+    ]
+
+    SIZE_CHOICES = [
+        ('standard', 'Standard'),
+        ('xl', 'XL'),  # ili 'XL', ako više voliš brojčanu oznaku
     ]
 
     slug = models.SlugField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='dresses')
     name = models.CharField(max_length=200)
+    size = models.CharField(max_length=20, choices=SIZE_CHOICES, default='standard')
     short_description = models.CharField(max_length=255)
     description = models.TextField()
     additional_info = models.TextField(blank=True, null=True)

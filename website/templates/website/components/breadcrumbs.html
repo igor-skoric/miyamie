@@ -2,10 +2,8 @@
 
 
 <div class="flex text-gray-300 bg-[#F4F4F4] p-2 px-5 md:px-32" aria-label="breadcrumb">
-    <div class="mx-auto max-w-[1200px]">
-
-
-        <ul class="flex items-center space-x-2 w-[1200px]">
+    <div class="">
+        <ul class="mx-auto max-w-[1200px] flex items-center space-x-2 pl-5">
             {% for name, url in breadcrumbs %}
             <li class="flex items-center">
                 <a href="{{ url }}" class="text-gray-600 hover:text-blue-800">{{ name }}</a>

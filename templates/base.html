@@ -1,5 +1,6 @@
 {% load static %}
 {% load static tailwind_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +8,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="{% static 'img/logo.png' %}">
 
-    <title>Miyamije</title>
+    <title>{% block title %}{% endblock %}</title>
 
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Uključi Alpine.js u <head> ili pre zatvaranja </body> -->
@@ -19,7 +21,7 @@
     <!-- U head sekciji -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Cormorant+Garamond&family=Cinzel&family=Great+Vibes&display=swap"
           rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
 
     {% tailwind_css %}
 </head>
@@ -57,10 +59,15 @@
 {% include 'website/components/schedule.html' %}
 
 
+
+<!-- Lightbox2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+
 </body>
 </html>
 
 <script src="{% static 'js/scheduleDate.js' %}"></script>
+<script src="{% static 'js/openSideBar.js' %}"></script>
 <script src="{% static 'js/scrollToTop.js' %}"></script>
 <script src="{% static 'js/scheduleAppointment.js' %}"></script>
 
@@ -74,14 +81,61 @@
             if (otherMenu !== menu) otherMenu.classList.add("hidden");
         });
     }
-
-    function setLanguage(lang) {
-        // Ovde dodaj logiku za menjanje jezika (npr. preko Django view-a ili localStorage)
-        console.log("Selected language:", lang);
-
-        // Zatvori sve menije
-        document.querySelectorAll(".languageMenu").forEach(menu => menu.classList.add("hidden"));
+// Funkcija za dohvat CSRF kolačića iz browsera
+function getCookie(name) {
+  let cookieValue = null;
+  if (document.cookie && document.cookie !== '') {
+    const cookies = document.cookie.split(';');
+    for (let cookie of cookies) {
+      cookie = cookie.trim();
+      if (cookie.startsWith(name + '=')) {
+        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+        break;
+      }
     }
+  }
+  return cookieValue;
+}
+
+function setLanguage(lang) {
+  const csrftoken = getCookie('csrftoken');
+
+  let nextUrl = window.location.pathname + window.location.search + window.location.hash;
+
+  // Regex za pronalaženje jezika u URL-u: /sr/ ili /en/
+  const langRegex = /^\/(sr|en)(\/|$)/;
+
+  if (langRegex.test(nextUrl)) {
+    // Zameni trenutni prefix sa izabranim jezikom
+    nextUrl = nextUrl.replace(langRegex, `/${lang}/`);
+  } else {
+    // Ako nema prefiksa a izabrani jezik nije default (npr. sr), dodaj prefiks
+    if (lang !== 'sr') {  // podrazumevani jezik
+      nextUrl = `/${lang}${nextUrl}`;
+    }
+  }
+
+  fetch("{% url 'set_language' %}", {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'X-CSRFToken': csrftoken,
+    },
+    body: new URLSearchParams({
+      language: lang,
+      next: nextUrl
+    })
+  })
+  .then(response => {
+    if (response.ok) {
+      window.location.href = nextUrl; // redirect na ispravan URL sa jezikom
+    } else {
+      alert('Greška pri promeni jezika.');
+    }
+  })
+  .catch(() => alert('Greška pri promeni jezika.'));
+}
+
 
     // Klik van menija zatvara dropdown
     window.addEventListener('click', function (e) {
@@ -106,3 +160,6 @@
         mobileMenu.classList.add("-translate-x-full");
     });
 </script>
+
+
+<script src="{% static 'js/script.js' %}"></script>

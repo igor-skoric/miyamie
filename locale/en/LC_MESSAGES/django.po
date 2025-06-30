@@ -1,0 +1,432 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-30 16:22+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\templates\footer.html:28 .\templates\header.html:169
+#: .\templates\header.html:288
+msgid "KONTAKT"
+msgstr "CONTACT"
+
+#: .\templates\footer.html:36
+msgid "LOKACIJA"
+msgstr "LOCATION"
+
+#: .\templates\footer.html:50
+msgid "STRANICE"
+msgstr "PAGES"
+
+#: .\templates\footer.html:52
+msgid "Naslovna"
+msgstr "Home"
+
+#: .\templates\footer.html:53 .\website\context_processors.py:40
+msgid "Kratke haljine"
+msgstr "Short Dresses"
+
+#: .\templates\footer.html:54 .\website\context_processors.py:37
+msgid "Duge haljine"
+msgstr "Long Dresses"
+
+#: .\templates\footer.html:55 .\website\context_processors.py:47
+msgid "Najprodavanije"
+msgstr "Bestseller"
+
+#: .\templates\footer.html:56
+msgid "Le choix - Žene"
+msgstr "Le choix - Woman"
+
+#: .\templates\footer.html:57
+msgid "Le choix - Devojčice"
+msgstr "Le choix - Girls"
+
+#: .\templates\footer.html:58 .\website\context_processors.py:22
+msgid "O nama"
+msgstr "About"
+
+#: .\templates\footer.html:59 .\templates\header.html:6
+#: .\website\context_processors.py:24
+#: .\website\templates\website\pages\contact.html:20
+msgid "Kontakt"
+msgstr "Contact"
+
+#: .\templates\footer.html:65
+msgid "2025 MIYAMIE. Sva prava zadržana."
+msgstr "2025 MIYAMIE. All rights reserved."
+
+#: .\templates\header.html:23
+msgid "Pretraži"
+msgstr "Search"
+
+#: .\templates\header.html:31
+msgid "Kako do nas?"
+msgstr "How to find us?"
+
+#: .\templates\header.html:35
+msgid "Jezik"
+msgstr "Language"
+
+#: .\templates\header.html:80 .\templates\header.html:206
+msgid "NASLOVNA"
+msgstr "HOME"
+
+#: .\templates\header.html:85 .\templates\header.html:213
+msgid "EKSKLUZIVNE HALJINE"
+msgstr "EXCLUSIVE DRESSES"
+
+#: .\templates\header.html:101 .\templates\header.html:227
+#: .\website\templates\website\pages\index.html:23
+msgid "DUGE HALJINE"
+msgstr "LONG DRESSES"
+
+#: .\templates\header.html:103 .\templates\header.html:230
+#: .\website\templates\website\pages\index.html:57
+msgid "KRATKE HALJINE"
+msgstr "SHORT DRESSES"
+
+#: .\templates\header.html:106 .\templates\header.html:235
+msgid "NAJPRODAVANIJE"
+msgstr "BESTSELLER"
+
+#: .\templates\header.html:121 .\templates\header.html:248
+msgid "PRODAJA"
+msgstr "FOR SALE"
+
+#: .\templates\header.html:122 .\templates\header.html:252
+msgid "IZNAJMLJIVANJE"
+msgstr "FOR RENT"
+
+#: .\templates\header.html:154 .\templates\header.html:278
+msgid "ŽENE"
+msgstr "WOMAN"
+
+#: .\templates\header.html:156 .\templates\header.html:281
+msgid "DEVOJČICE"
+msgstr "GIRLS"
+
+#: .\templates\header.html:167 .\templates\header.html:286
+msgid "SHOWROOM"
+msgstr "SHOWROOM"
+
+#: .\templates\header.html:168 .\templates\header.html:287
+msgid "O NAMA"
+msgstr "ABOUT US"
+
+#: .\website\context_processors.py:17
+msgid "Početna"
+msgstr "Home"
+
+#: .\website\context_processors.py:26 .\website\context_processors.py:30
+#: .\website\context_processors.py:36 .\website\context_processors.py:39
+#: .\website\context_processors.py:46 .\website\context_processors.py:49
+#: .\website\context_processors.py:52
+msgid "Sve haljine"
+msgstr "All Dresses"
+
+#: .\website\context_processors.py:32
+msgid "Pretraga"
+msgstr "Search"
+
+#: .\website\context_processors.py:42
+#: .\website\templates\website\pages\index.html:148
+msgid "Žene"
+msgstr "Women"
+
+#: .\website\context_processors.py:44
+#: .\website\templates\website\pages\index.html:154
+msgid "Devojčice"
+msgstr "Girls"
+
+#: .\website\context_processors.py:50
+msgid "Za Prodaju"
+msgstr "For Sale"
+
+#: .\website\context_processors.py:53
+msgid "Za Inzjamljivanje"
+msgstr "For Rent"
+
+#: .\website\context_processors.py:57
+msgid "Svi proizvodi"
+msgstr "All products"
+
+#: .\website\context_processors.py:61
+msgid "Sve usluge"
+msgstr "All services"
+
+#: .\website\templates\website\components\schedule.html:15
+msgid "Zakaži"
+msgstr "Book"
+
+#: .\website\templates\website\components\schedule.html:17
+msgid "Zakaži termin"
+msgstr "Book an appointment"
+
+#: .\website\templates\website\components\schedule.html:21
+#: .\website\templates\website\components\schedule.html:22
+#: .\website\templates\website\pages\contact.html:59
+msgid "Ime"
+msgstr "Name"
+
+#: .\website\templates\website\components\schedule.html:24
+#: .\website\templates\website\components\schedule.html:25
+msgid "Email"
+msgstr "Email"
+
+#: .\website\templates\website\components\schedule.html:27
+#: .\website\templates\website\components\schedule.html:28
+msgid "Telefon"
+msgstr "Phone No."
+
+#: .\website\templates\website\components\schedule.html:30
+msgid "Datum"
+msgstr "Date"
+
+#: .\website\templates\website\components\schedule.html:33
+msgid "Vreme"
+msgstr "Time"
+
+#: .\website\templates\website\components\schedule.html:38
+#: .\website\templates\website\pages\contact.html:74
+msgid "Pošalji"
+msgstr "Send"
+
+#: .\website\templates\website\pages\about.html:17
+msgid "Vaša modna oaza"
+msgstr "Your fashion oasis"
+
+#: .\website\templates\website\pages\about.html:18
+msgid ""
+"Verujemo da svaka žena zaslužuje trenutak pažnje i prostora da zablista. "
+"Zato smo stvorili mesto gde možete iznajmiti ekskluzivne haljine za svečane "
+"prilike i zakazati probu u terminu koji vama najviše odgovara. Uz to, nudimo "
+"i casual jakne koje možete isprobati na licu mesta. Naš cilj je da se u "
+"prijatnom ambijentu svakoj dami posvetimo s posebnom pažnjom."
+msgstr ""
+"We believe every woman deserves a moment of attention and space to "
+"shine.That’s why we created a place where you can rent exclusive dresses for "
+"special occasions and schedule a fitting at a time that suits you best.In "
+"addition, we offer casual jackets that you can try on-site.Our goal is to "
+"dedicate special care to every lady in a pleasant and welcoming environment."
+
+#: .\website\templates\website\pages\about.html:25
+msgid ""
+"Verujemo da luksuz ne treba da bude privilegija, već iskustvo dostupno svima."
+msgstr ""
+"We believe luxury should not be a privilege, but an experience accessible to "
+"everyone."
+
+#: .\website\templates\website\pages\about.html:49
+msgid ""
+"Uronite u svet elegancije uz našu pažljivo odabranu kolekciju luksuznih "
+"haljina koje odišu stilom i gracioznošću."
+msgstr ""
+"Dive into a world of elegance with our carefully curated collection of "
+"luxury dresses that exude style and grace."
+
+#: .\website\templates\website\pages\about.html:51
+msgid "Luksuz koji inspiriše i osvaja."
+msgstr "Luxury that inspires and captivates."
+
+#: .\website\templates\website\pages\about.html:60
+msgid "Kod nas dobijate punu uslugu."
+msgstr "With us, you get full service."
+
+#: .\website\templates\website\pages\about.html:65
+msgid "Ekskluzivne haljine"
+msgstr "Exclusive Dresses"
+
+#: .\website\templates\website\pages\about.html:70
+msgid "Personalizovano savetovanje"
+msgstr "Personalized Consultation"
+
+#: .\website\templates\website\pages\about.html:75
+msgid "Showroom za isprobavanje"
+msgstr "Fitting Showroom"
+
+#: .\website\templates\website\pages\about.html:80
+msgid "Online zakazivanje"
+msgstr "Online Booking"
+
+#: .\website\templates\website\pages\about.html:85
+msgid "Vaš stil u miru i privatnosti"
+msgstr "Your style in peace and privacy"
+
+#: .\website\templates\website\pages\about.html:99
+msgid ""
+"Pored luksuznih haljina, otkrijte i našu kolekciju kežual jakni – za svaki "
+"trenutak."
+msgstr ""
+"Besides luxury dresses, discover our collection of casual jackets – for "
+"every moment."
+
+#: .\website\templates\website\pages\about.html:114
+msgid "Tamo gde se stil susreće sa svakodnevicom – počinje naša priča."
+msgstr "Where style meets everyday life – that's where our story begins."
+
+#: .\website\templates\website\pages\about.html:116
+msgid ""
+"Naš casual brend nastao je iz želje da svaka žena i devojčica pronađe "
+"idealnu jaknu koja spaja stil, udobnost i kvalitet. Verujemo da se moda ne "
+"mora birati između izgleda i praktičnosti – zato nudimo pažljivo osmišljene "
+"modele za svakodnevne prilike, šetnje i opuštene izlaske. Svaki komad "
+"izrađen je od kvalitetnih materijala, prati savremene trendove i dostupan je "
+"po pristupačnim cenama. Naša misija je da se u našim jaknama osećate "
+"samouvereno, lepo i svoja – u svakom koraku."
+msgstr ""
+"Our casual brand was born from the desire for every woman and girl to find "
+"the perfect jacket combining style, comfort, and quality. We believe fashion "
+"shouldn't force a choice between looks and practicality – that's why we "
+"offer carefully designed pieces for everyday occasions, walks, and relaxed "
+"outings. Each item is made from quality materials, follows contemporary "
+"trends, and is available at affordable prices. Our mission is for you to "
+"feel confident, beautiful, and yourself in our jackets – every step of the "
+"way."
+
+#: .\website\templates\website\pages\contact.html:34
+msgid "Lokacija"
+msgstr "Location"
+
+#: .\website\templates\website\pages\contact.html:56
+msgid "Budite slobodni da nas kontaktirate."
+msgstr "Feel free to contact us."
+
+#: .\website\templates\website\pages\contact.html:65
+msgid "Broj Telefona"
+msgstr "Phone Number"
+
+#: .\website\templates\website\pages\contact.html:68
+#: .\website\templates\website\pages\contact.html:69
+msgid "Poruka"
+msgstr "Message"
+
+#: .\website\templates\website\pages\index.html:16
+msgid "ELEGANCIJA KOJA OSVAJA SVET"
+msgstr "ELEGANCE THAT CONQUERS THE WORLD"
+
+#: .\website\templates\website\pages\index.html:18
+msgid ""
+"Otkrijte našu kolekciju luksuznih haljina koje definišu sofisticiranost."
+msgstr "Discover our collection of luxury dresses that define sophistication."
+
+#: .\website\templates\website\pages\index.html:94
+msgid "NAJPRODAVANIJE HALJINE"
+msgstr "BESTSELLER"
+
+#: .\website\templates\website\pages\index.html:133
+msgid "Otkrijte i naš casual brend"
+msgstr "Discover our casual brand too"
+
+#: .\website\templates\website\pages\index.html:142
+msgid ""
+"Predstavljamo naš casual brend koji spaja udobnost i stil! U ponudi imamo "
+"moderne casual jakne za žene i devojčice – idealne za svaki dan, šetnju ili "
+"izlazak. Kvalitetni materijali, trendi krojevi i pristupačne cene. Izaberi "
+"svoju omiljenu jaknu i zasijaj u svakom koraku!"
+msgstr ""
+"We present our casual brand that combines comfort and style! We offer modern "
+"casual jackets for women and girls – perfect for every day, walk, or outing. "
+"Quality materials, trendy cuts, and affordable prices. Choose your favorite "
+"jacket and shine with every step!"
+
+#: .\website\templates\website\pages\index.html:162
+msgid "Iskustvo naših klijenata"
+msgstr "Our clients' experience"
+
+#: .\website\templates\website\pages\products.html:58
+msgid "Ukupno"
+msgstr "Total"
+
+#: .\website\templates\website\pages\products.html:59
+msgid "rezultata"
+msgstr "results"
+
+#: .\website\templates\website\pages\products.html:60
+msgid "Filteri"
+msgstr "Filters"
+
+#: .\website\templates\website\pages\showroom.html:19
+msgid "Dobrodošli u naš showroom"
+msgstr "Welcome to our showroom"
+
+#: .\website\templates\website\pages\showroom.html:20
+msgid "Iznajmljivanje haljina u prostoru koji odiše elegancijom i stilom"
+msgstr "Gown rental in a space filled with elegance and sophistication"
+
+#: .\website\templates\website\pages\showroom.html:27
+msgid "Zašto naš showroom?"
+msgstr "What makes our showroom special?"
+
+#: .\website\templates\website\pages\showroom.html:31
+msgid "Ekskluzivna lokacija"
+msgstr "Exclusive Location"
+
+#: .\website\templates\website\pages\showroom.html:32
+msgid "Nalazimo se na geografskom centru Beograda"
+msgstr "We are located in the geographic center of Belgrade"
+
+#: .\website\templates\website\pages\showroom.html:36
+msgid "Elegantan enterijer"
+msgstr "Elegant interior"
+
+#: .\website\templates\website\pages\showroom.html:37
+msgid "Mesto gde svaka haljina otkriva vašu ženstvenost."
+msgstr "A place where every dress reveals your femininity."
+
+#: .\website\templates\website\pages\showroom.html:41
+msgid "Prijatan doček"
+msgstr "A warm welcome"
+
+#: .\website\templates\website\pages\showroom.html:42
+msgid "Uvek vas dočekujemo sa osmehom, uz piće dobrodošlice."
+msgstr "We always greet you with a smile and a welcome drink."
+
+#: .\website\templates\website\pages\showroom.html:46
+msgid "Mir i privatnost"
+msgstr "Peace and privacy"
+
+#: .\website\templates\website\pages\showroom.html:47
+msgid "Zagarantovan mir i intimna atmosfera za svaku probu."
+msgstr "Guaranteed peace and intimate atmosphere for every fitting."
+
+#: .\website\templates\website\pages\showroom.html:54
+msgid "Showroom Galerija"
+msgstr "Showroom Gallery"
+
+#: .\website\templates\website\pages\single_product.html:29
+msgid "Nazad"
+msgstr "Back"
+
+#: .\website\templates\website\pages\single_product.html:83
+msgid "Dodatni opis"
+msgstr "Description"
+
+#: .\website\templates\website\pages\single_product.html:98
+msgid "Informacije o dostavi"
+msgstr "Delivery information"
+
+#: .\website\templates\website\pages\single_product.html:120
+msgid "Zakaži probu"
+msgstr "Book an appointment"
+
+#: .\website\templates\website\pages\single_product.html:129
+msgid "Pogledajte i druge"
+msgstr "See also others"
+
+#: .\website\templates\website\pages\single_product.html:131
+msgid "Povezane proizvode"
+msgstr "Related products"

@@ -14,8 +14,7 @@ class DressAdmin(admin.ModelAdmin):
     search_fields = ('name', 'category__name', 'tag')      # polja po kojima možeš da pretražuješ
     ordering = ('name',)                       # podrazumevano sortiranje
     inlines = [DressImageInline]
-
-    prepopulated_fields = {"slug": ("name",)}              # automatski popunjava slug iz name
+    exclude = ("slug",)
 
 
 

@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
 {% load static %}
+{% load i18n %}
+
 {% block title %}Products Page{% endblock %}
 
 {% block content %}
@@ -15,29 +17,55 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
+
+
 </style>
 
 <!-- Sekcija proizvoda -->
-<div class="max-w-6xl mx-auto bg-white p-4 mt-10">
+<div class="max-w-6xl mx-auto bg-white p-4">
+    <div>
+        <a href="{{ request.META.HTTP_REFERER }}">
+            <div class="bg-black/80 p-2 lg:p-3 text-white w-fit rounded">
+                ← {% trans 'Nazad' %}
+            </div>
+        </a>
+    </div>
+    <br>
+
+
     <div class="flex flex-col md:flex-row gap-8">
 
         <div class="flex md:flex-row flex-col gap-2 w-full md:w-2/3">
             <!-- Sporedne slike sa leve strane -->
-            <div class="flex md:flex-col gap-2 w-full md:w-[200px] order-2 md:order-1
-              max-h-[700px] overflow-y-auto">
-                <img src="{{product.main_image.url}}"
-                     class="object-cover cursor-pointer rounded border md:w-full w-[90%]" onclick="changeImage(this)">
-
+            <div
+                    class="flex flex-row md:flex-col gap-2 w-full md:w-[200px] order-2 md:order-1 max-h-[700px]
+           overflow-x-auto md:overflow-y-auto no-scrollbar"
+            >
                 {% for image in product.images.all %}
-                    <img src="{{image.image.url}}"  class="object-cover cursor-pointer rounded border" onclick="changeImage(this)">
+                <a
+                        data-fancybox="gallery"
+                        href="{{image.image.url}}"
+                        class="flex-shrink-0 md:w-full w-full rounded overflow-hidden"
+                >
+                    <img
+                            src="{{image.image.url}}"
+                            class="object-cover cursor-pointer rounded border w-full h-[300px]"
+                            alt="Sporedna slika"
+                    />
+                </a>
                 {% endfor %}
             </div>
 
             <!-- Glavna slika desno od sporednih -->
             <div class="flex-1 order-1 md:order-2">
-                <img id="mainImage" src="{{product.main_image.url}}" alt="Glavna slika"
-                     class="w-full max-h-[800px] object-cover cursor-pointer rounded"
-                     onclick="openFullscreen()"/>
+                <a data-fancybox="gallery" href="{{product.main_image.url}}">
+                    <img
+                            id="mainImage"
+                            src="{{product.main_image.url}}"
+                            alt="Glavna slika"
+                            class="w-full max-h-[800px] object-cover cursor-pointer rounded"
+                    />
+                </a>
             </div>
         </div>
 
@@ -47,21 +75,19 @@
             <h2 class="text-5xl font-semibold mb-2">{{product.name}}</h2>
             <br>
 
-            <p class="text-gray-700 mb-4">{{product.short_description}}</p>
+            <p class="text-gray-700 mb-4"></p>
             <br>
             <br>
             <div class="bg-white rounded-md shadow ">
-
-
                 <button class="accordion-toggle w-full text-left p-4 font-semibold text-lg flex justify-between items-center">
-                    <span>Dodatni opis</span>
+                    <span>{% trans 'Dodatni opis' %}</span>
                     <span class="icon">+</span>
                 </button>
                 <div class="accordion-panel overflow-hidden transition-all duration-300 ease-in-out max-h-0">
                     <ul class="p-4 space-y-2">
                         <li>
                             <button class="accordion-toggle w-full text-left {% if subsection.yacht_details.all %} border border-b {% endif %}  flex justify-between items-center">
-                                <span>CONTACT US FOR PRE ORDER Delivery time: 1 - 3 MONTHS Description: Elegant slim fit lace jumpsuit, with a plunging V neckline and back like, embroidered with beads featuring feathered puffy sleeves. Details: Model is wearing size 34 Europe number. The model’s height: 178/ 70.0, bust: 83 cm/ 32.6, waist: 59 cm/23.2, hips: 89 cm / 35.0</span>
+                                <span>{{product.short_description}}</span>
                             </button>
                         </li>
                     </ul>
@@ -69,25 +95,30 @@
                 <hr>
 
                 <button class="accordion-toggle w-full text-left p-4 font-semibold text-lg flex justify-between items-center">
-                    <span>Informacije o dostavi</span>
+                    <span>{% trans 'Informacije o dostavi' %}</span>
                     <span class="icon">+</span>
                 </button>
                 <div class="accordion-panel overflow-hidden transition-all duration-300 ease-in-out max-h-0">
                     <ul class="p-4 space-y-2">
                         <li>
                             <button class="accordion-toggle w-full text-left {% if subsection.yacht_details.all %} border border-b {% endif %}  flex justify-between items-center">
-                                <span>CONTACT US FOR PRE ORDER Delivery time: 1 - 3 MONTHS Description: Elegant slim fit lace jumpsuit, with a plunging V neckline and back like, embroidered with beads featuring feathered puffy sleeves. Details: Model is wearing size 34 Europe number. The model’s height: 178/ 70.0, bust: 83 cm/ 32.6, waist: 59 cm/23.2, hips: 89 cm / 35.0</span>
+                                <span>
+                                    {% if LANGUAGE_CODE == 'sr' %}
+                                    {{config.delivery_info|safe}}
+                                    {% else %}
+                                    {{config.delivery_info_en|safe}}
+                                    {% endif %}
+                                </span>
                             </button>
                         </li>
                     </ul>
                 </div>
-
             </div>
-
-
             <br>
             <br>
-            <button class="openSidebarBtn bg-black text-white px-4 py-2 rounded hover:bg-gray-800">Zakaži probu</button>
+            <button class="openSidebarBtn bg-black text-white px-4 py-2 rounded hover:bg-gray-800">
+                {% trans 'Zakaži probu' %}
+            </button>
         </div>
     </div>
 </div>
@@ -95,10 +126,9 @@
 <!-- Sekcija naslov -->
 <section class="w-full h-[200px] md:h-[300px] flex items-center justify-center">
     <div class="text-center">
-        <p class="text-lg text-gray-700">Pogledajte i druge</p>
+        <p class="text-lg text-gray-700">{% trans 'Pogledajte i druge' %}</p>
         <!-- Prvi tekst -->
-        <h2 class="text-4xl font-bold mb-4">Povezane proizvode</h2>
-
+        <h2 class="text-4xl font-bold mb-4">{% trans 'Povezane proizvode' %}</h2>
         <!-- Drugi tekst -->
     </div>
 </section>
@@ -108,14 +138,12 @@
     <!-- Slider kontejner -->
     <div id="slider" class="flex overflow-x-auto scroll-smooth scrollbar-hide space-x-2">
         {% for related_product in related_products %}
-                <div class="w-1/2 md:w-1/3 flex-shrink-0">
-                    <a href="{% url 'single_product' related_product.id %}">
-                        <img src="{{related_product.main_image.url}}" class=" object-cover w-full h-full"/>
-                    </a>
-
-                </div>
+        <div class="w-1/2 md:w-1/3 flex-shrink-0">
+            <a href="{% url 'single_product' related_product.id %}">
+                <img src="{{related_product.main_image.url}}" class=" object-cover w-full h-full"/>
+            </a>
+        </div>
         {% endfor %}
-
     </div>
 
     <!-- Dugme levo -->
